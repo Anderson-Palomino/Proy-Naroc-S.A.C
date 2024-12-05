@@ -1,14 +1,7 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.bg-custom {
+    background-color: #AAA9A9;
 }
-
-h1 {
-    color: #333;
+.navbar-nav .nav-link {
+    font-family: "Roboto",sans-serif;
+    font-size: 1.4em;
 }
