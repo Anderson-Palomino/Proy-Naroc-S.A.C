@@ -1,0 +1,46 @@
+.servBann1 img {
+    transform: translate(-50%, -40%);
+}
+
+.card {
+    background-color: none;
+}
+
+.cardBG {
+    background-color: #ece0d5;
+    border-radius: 15px;
+}
+
+.border-custom {
+    border: none;
+}
+
+.size-custom {
+    /*width: 22rem;}*/
+}
+
+.btn-custom {
+    background-color: #f29d4e;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: #bd722d;
+    color: white;
+}
+
+.cardBG:hover {
+    color: white;
+    background-color: orange;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.accordion-custom {
+    background-color: #ebb786;
+    border-bottom: 2px solid white;
+}
+
+.accordion-custom:last-child {
+    border-bottom: ;
+}
