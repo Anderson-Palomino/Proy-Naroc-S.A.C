@@ -3,6 +3,7 @@ footer {
   background: url("/img/logo/servicios.png") no-repeat center/cover;
   color: rgb(0, 0, 0);
   padding: 30px 0;
+  opacity: 0.93;
 }
 
 footer a {
