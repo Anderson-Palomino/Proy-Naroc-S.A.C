@@ -5,4 +5,4 @@ function loadNavbar() {
             document.getElementById('navbar-placeholder').innerHTML = data;
         });
 }
-window.onload = loadNavbar;
+window.onload = loadNavbar();
