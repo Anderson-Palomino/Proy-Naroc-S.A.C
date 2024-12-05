@@ -7,10 +7,10 @@
 }
 .navbar-nav .nav-link {
     font-family: "Roboto", sans-serif;
-    font-size: 1.4em;
+    font-size: 1.2em;
     margin-bottom: 0; /* Asegúrate de que no haya margen inferior */
-    margin-left: 20px; /* Ajusta el margen izquierdo para acercar los elementos */
-    margin-right: 20px; /* Ajusta el margen derecho para acercar los elementos */
+    margin-left: 2px; /* Ajusta el margen izquierdo para acercar los elementos */
+    margin-right: 2px; /* Ajusta el margen derecho para acercar los elementos */
 }
 .navbar-brand {
     margin-left: 20px; /* Ajusta el margen izquierdo del logo */
