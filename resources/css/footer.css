@@ -20,86 +20,22 @@ footer a:hover {
 }
 
 .footer-icons a:hover {
-  color: orange;
+  color: rgb(0, 0, 0);
 }
 
-/* WhatsApp Button */
-.whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  color: #fff;
-  font-size: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
 
-.whatsapp-button:hover {
-  background-color: #20c357;
-}
 
-.section-title {
-  position: relative;
-  font-size: 1.8rem;
-  font-weight: bold;
-  display: inline-block;
-}
 
-.section-background {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100px;
-  /* Ajusta según el tamaño de tu imagen */
-  padding: 10px 20px;
-  color: white;
-  background: url("Bookmar.png") no-repeat center/cover;
-  background-size: cover;
-  text-align: center;
-  font-size: 1.5rem;
-  /* Ajusta el tamaño del texto */
-  border-radius: 5px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
 
-.card {
-  border-radius: 10px;
-  overflow: hidden;
-}
 
-.card-body {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background-color: #fff;
-}
 
-.card-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
 
-.card-text {
-  font-size: 1rem;
-  color: #555;
-}
 
-.icon {
-  font-size: 2.5rem;
-  color: orange;
-  margin-right: 15px;
-}
 
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-right: 20px;
-}
+
+
+
+
+
+
+
