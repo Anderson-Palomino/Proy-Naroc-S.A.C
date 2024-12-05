@@ -1,7 +1,31 @@
+
+#navbar-placeholder {
+    background-color: #AAA9A9;
+}
 .bg-custom {
     background-color: #AAA9A9;
 }
 .navbar-nav .nav-link {
-    font-family: "Roboto",sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.4em;
+    margin-bottom: 0; /* Asegúrate de que no haya margen inferior */
+    margin-left: 20px; /* Ajusta el margen izquierdo para acercar los elementos */
+    margin-right: 20px; /* Ajusta el margen derecho para acercar los elementos */
+}
+.navbar-brand {
+    margin-left: 20px; /* Ajusta el margen izquierdo del logo */
+    margin-right: 20px; /* Ajusta el margen derecho del logo */
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1.2em; /* Ajusta el tamaño de la fuente en dispositivos móviles */
+        margin-left: 10px; /* Ajusta el margen izquierdo en dispositivos móviles */
+        margin-right: 10px; /* Ajusta el margen derecho en dispositivos móviles */
+    }
+    .navbar-brand {
+        margin-left: 10px; /* Ajusta el margen izquierdo del logo en dispositivos móviles */
+        margin-right: 10px; /* Ajusta el margen derecho del logo en dispositivos móviles */
+    }
 }
