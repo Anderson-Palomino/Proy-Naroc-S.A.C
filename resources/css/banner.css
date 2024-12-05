@@ -5,6 +5,7 @@
     max-width: 100%;
     height: 450px;
     overflow: hidden;
+    margin-top: 0; /* Asegúrate de que no haya margen superior */
 }
 .banner img {
     position: absolute;
@@ -43,8 +44,21 @@
     color: orange;
 }
 .banner-subtext {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: black;
     margin-top: 1rem;
     font-weight: 400;
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+    .banner {
+        height: 300px;
+    }
+    .banner-text {
+        font-size: 2.5rem;
+    }
+    .banner-subtext {
+        font-size: 1rem;
+    }
 }

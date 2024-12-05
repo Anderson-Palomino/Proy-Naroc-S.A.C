@@ -2,6 +2,14 @@
     background-color: #AAA9A9;
 }
 .navbar-nav .nav-link {
-    font-family: "Roboto",sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.4em;
+    margin-bottom: 0; /* Asegúrate de que no haya margen inferior */
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1.2em; /* Ajusta el tamaño de la fuente en dispositivos móviles */
+    }
 }
