@@ -1,3 +1,4 @@
+
 const slider = document.querySelector('.slider');
 const slides = document.querySelectorAll('.slide');
 const prevButton = document.querySelector('.prev');
@@ -35,3 +36,4 @@ prevButton.addEventListener('click', prevSlide);
 
 // Initialize
 updateActiveSlide(currentIndex);
+
