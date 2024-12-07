@@ -249,3 +249,29 @@
     max-height: 160px; 
     object-fit: contain; 
 }
+img {
+    transition: transform 0.3s ease-in-out; 
+}
+
+img:hover {
+    transform: scale(1.1); 
+}
+
+.image-lummi-category-avatars:hover,
+.image:hover {
+    transform: scale(1.1); 
+}
+
+.button2 {
+    transition: transform 0.3s ease-in-out; 
+}
+
+.button2:hover {
+    transform: scale(1.1);
+    cursor: pointer; 
+}
+
+.button2:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    background-color: #f57c00; 
+}
