@@ -25,3 +25,33 @@
     font-size: 1.5rem;
     color: #25D366; /* Color verde de WhatsApp */
 }
+.img-fluid {
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-fluid:hover {
+    transform: scale(1.1);
+}
+
+.btn-whatsapp {
+    transition: background-color 0.3s ease-in-out,
+     transform 0.2s ease-in-out;
+}
+
+.btn-whatsapp:hover {
+    background-color: orange;
+    transform: scale(1.05);
+}
+.bi-whatsapp {
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.shadow-box {
+    transition: all 0.3s ease-in-out;
+}
+
+.content:hover .shadow-box {
+    transform: translateY(-10px);
+    opacity: 0.8;
+}
