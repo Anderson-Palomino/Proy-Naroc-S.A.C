@@ -1,28 +1,47 @@
  /* General Styles */
  body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Roboto, sans-serif,;
     background-color: #eee;
-    height: 100%;
+    height: auto;
     margin: 0;
 }
 #main-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+    min-height: 70vh; /* Asegura que ocupe toda la altura de la pantalla */
 }
 #content {
     flex: 1; /* Esto empuja al footer hacia abajo */
 }
-/* Hero Section */
 .hero-section {
     position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url("/img/NuestrosClientes/baner\ hd.png") no-repeat center center/cover;
+    width: 100%; /* Ajusta al ancho completo */
+    height: auto; /* Ajusta automáticamente según el contenido */
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden; /* Asegura que no haya contenido fuera del contenedor */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("/img/NuestrosClientes/baner hd.png") no-repeat center center/cover;
+    background-color: rgb(57, 0, 212); /* Aplica opacidad al fondo */
+    z-index: 1;
+    opacity: 50%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté por encima del fondo */
+    text-align: center;
+    color: #000000; /* Ajusta el color del texto si es necesario */
 }
 
 .overlay {
@@ -33,12 +52,15 @@
 }
 
 h1 {
-    font-size: 48px;
-    color: #000;
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #000000;
     margin-bottom: 20px;
+    
 }
 
 h1 .highlight {
+    
     color: #ff9500;
 }
 
@@ -60,7 +82,7 @@ h1 .highlight {
 /* Slider Section */
 .slider-container {
     position: relative;
-    width: 70%;
+    width: 50%;
     margin: 50px auto;
     overflow: hidden;
 }
