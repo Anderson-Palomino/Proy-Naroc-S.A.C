@@ -20,13 +20,14 @@ footer::before {
   z-index: -1;
 }
 
-footer a {
-  color: rgb(0, 0, 0);
+footer a:hover {
   text-decoration: none;
+  color: black;
 }
 
-footer a:hover {
+ul.list-unstyled a:hover {
   text-decoration: underline;
+  color: black;
 }
 
 .footer-icons a {
