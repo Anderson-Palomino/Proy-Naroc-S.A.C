@@ -1,0 +1,127 @@
+/* General Styling */
+.about-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.about-content.reverse {
+    flex-direction: row-reverse;
+}
+
+.image-with-background {
+    position: relative;
+    width: 50%;
+}
+
+.image-with-background .background-img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    transform: translate(-10%, -10%);
+}
+
+.image-with-background .foreground-img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-overlay {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 4;
+    position: relative;
+    border-left: 5px solid #f57c00;
+}
+
+/* Misión y Visión Styling */
+.mision-vision {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+.mision, .vision {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.vision.reverse {
+    flex-direction: row-reverse;
+}
+
+.image-container {
+    position: relative;
+    flex: 1;
+}
+
+.image-container .background-img {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    transform: translate(-10%, -10%);
+}
+
+.image-container .orange-img {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+}
+
+.image-container .foreground-img {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: auto;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .about-content,
+    .mision-vision,
+    .mision,
+    .vision {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content.reverse,
+    .vision.reverse {
+        flex-direction: column-reverse;
+    }
+
+    .about-content .image-with-background, 
+    .mision .image-container, 
+    .vision .image-container {
+        width: 100%;
+    }
+
+    .mision .text-overlay,
+    .vision .text-overlay {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
