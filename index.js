@@ -12,7 +12,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/views', express.static(path.join(__dirname, 'views')));
 
 // Routes
-// ...existing code...
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
@@ -59,6 +58,10 @@ app.get('/Contactanos', (req, res) => {
 
 app.get('/Reclamos', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'Reclamos.html'));
+});
+
+app.get('/LogoNaroc', (req, res) => {
+    res.sendFile(path.join(__dirname,'public','img','logo', 'NAROC_SAC Logo.png'));
 });
 // Error handling
 app.use((err, req, res, next) => {
