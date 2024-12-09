@@ -57,6 +57,9 @@ app.get('/Contactanos', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'contactanos.html'));
 });
 
+app.get('/Reclamos', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'Reclamos.html'));
+});
 // Error handling
 app.use((err, req, res, next) => {
     console.error(err.stack);
