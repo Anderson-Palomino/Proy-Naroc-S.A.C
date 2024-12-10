@@ -39,3 +39,144 @@ ul.list-unstyled a:hover {
   color: rgb(0, 0, 0);
 }
 
+/* Estilos originales del footer */
+.footer-bg {
+  background: rgba(0, 0, 0, 0);
+  color: #FFF;
+  padding: 30px 0;
+  position: relative;
+}
+
+.footer-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/img/logo/servicios.png") no-repeat center/cover;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Logo y texto del footer */
+.img-fluid.mb-3 {
+  width: 220px;
+  height: auto;
+}
+
+/* Enlaces del footer */
+.footer-icons a {
+  color: #FFF;
+  font-size: 24px;
+  margin-right: 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #f8f9fa;
+}
+
+/* Títulos de secciones */
+.text-uppercase.fw-bold {
+  color: #FFF;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Enlaces de navegación */
+.text-white.text-decoration-none {
+  transition: color 0.3s ease;
+}
+
+.text-white.text-decoration-none:hover {
+  color: #f8f9fa !important;
+}
+
+/* Línea divisoria */
+hr {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
+}
+
+/* Copyright y enlaces legales */
+.text-center.text-md-start,
+.text-center.text-md-end {
+  color: #FFF;
+}
+
+/* Botón de WhatsApp actualizado */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 35px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #20ba5a;
+  color: #FFF;
+}
+
+.whatsapp-float i {
+  line-height: 0;
+}
+
+/* Animación suave del botón */
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+  }
+  50% {
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+  }
+  100% {
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+  }
+}
+
+.whatsapp-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Estilos responsive */
+@media screen and (max-width: 767px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+  }
+
+  .footer-icons {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .footer-icons a {
+    font-size: 22px;
+    margin: 0 10px;
+  }
+}
+
+/* Mejoras de accesibilidad */
+.whatsapp-float:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.5), 0 5px 15px rgba(37, 211, 102, 0.3);
+}
