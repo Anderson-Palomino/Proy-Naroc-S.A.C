@@ -44,3 +44,12 @@
 .accordion-custom:last-child {
     border-bottom: ;
 }
+
+.full-height-img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.d-flex {
+    display: flex;
+}
