@@ -1,27 +1,31 @@
- /* General Styles */
- body {
+/* General Styles */
+body {
     margin: 0;
-    font-family: Roboto, sans-serif,;
+    font-family: Roboto, sans-serif;
     background-color: #eee;
     height: auto;
-    margin: 0;
 }
+
 #main-container {
     display: flex;
     flex-direction: column;
-    min-height: 70vh; /* Asegura que ocupe toda la altura de la pantalla */
+    min-height: 70vh;
 }
+
 #content {
-    flex: 1; /* Esto empuja al footer hacia abajo */
+    flex: 1;
 }
+
+/* Hero Section */
 .hero-section {
     position: relative;
-    width: 100%; /* Ajusta al ancho completo */
-    height: auto; /* Ajusta automáticamente según el contenido */
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Asegura que no haya contenido fuera del contenedor */
+    overflow: hidden;
+    padding: 50px 0;
 }
 
 .hero-section::before {
@@ -32,22 +36,23 @@
     right: 0;
     bottom: 0;
     background: url("/img/NuestrosClientes/baner hd.png") no-repeat center center/cover;
-    background-color: rgb(57, 0, 212); /* Aplica opacidad al fondo */
+    background-color: rgb(57, 0, 212);
     z-index: 1;
-    opacity: 50%;
+    opacity: 0.5;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* Asegura que el contenido esté por encima del fondo */
+    z-index: 2;
     text-align: center;
-    color: #000000; /* Ajusta el color del texto si es necesario */
+    color: #000000;
+    width: 100%;
+    padding: 0 20px;
 }
 
 .overlay {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0);
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
 }
 
@@ -55,90 +60,119 @@ h1 {
     font-size: 4.5rem;
     font-weight: bold;
     color: #000000;
-    margin-bottom: 20px;
-    
+    margin-bottom: 30px;
+    line-height: 1.2;
 }
 
 h1 .highlight {
-    
     color: #ff9500;
 }
 
+/* Feature List */
 .feature-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
 .feature {
     background-color: #fff;
-    padding: 15px 20px;
+    padding: 25px 30px;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     margin: 0 auto;
+    transition: all 0.3s ease;
 }
 
-/* Slider Section */
-.slider-container {
-    position: relative;
-    width: 50%;
-    margin: 50px auto;
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Swiper Container */
+.swiper-container {
+    width: 100%;
+    padding: 60px 0;
+    background-color: #f5f5f500;
     overflow: hidden;
 }
 
-.slider {
-    display: flex;
-    transition: transform 0.5s ease;
+.swiper-wrapper {
+    align-items: center;
+    min-height: 400px;
 }
 
-.slide {
-    min-width: 100%;
+.swiper-slide {
+    width: 400px;
+    height: 250px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
+}
+
+.swiper-slide-active {
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
     transform: scale(0.8);
     opacity: 0.6;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    text-align: center;
 }
 
-.slide img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.slide.active {
-    transform: scale(1);
-    opacity: 1;
-}
-
-/* Controls */
-.controls {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px 20px;
+/* Navigation Controls */
+.swiper-button-next,
+.swiper-button-prev {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
-    transition: background-color 0.3s ease;
+    color: #000;
+    --swiper-navigation-size: 25px;
+    transition: all 0.3s ease;
 }
 
-.controls button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #fff;
+    transform: scale(1.1);
 }
 
- /* Hero Section Animations */
- @keyframes fadeInUp {
+.swiper-pagination {
+    position: relative;
+    margin-top: 30px;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #000;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #ff9500;
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -164,43 +198,52 @@ h1 .highlight {
 .feature:nth-child(2) { animation-delay: 0.9s; }
 .feature:nth-child(3) { animation-delay: 1.2s; }
 
-/* Slider Animations */
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
     }
-    to {
-        opacity: 1;
-        transform: scale(1);
+
+    .swiper-wrapper {
+        min-height: 300px;
+    }
+
+    .swiper-slide {
+        width: 300px;
+        height: 200px;
+    }
+
+    .swiper-slide-active {
+        transform: scale(1.1);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+        --swiper-navigation-size: 20px;
+    }
+
+    .feature {
+        padding: 20px 25px;
     }
 }
 
-.slider-container .slide {
-    transition: all 0.5s ease;
-}
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+    }
 
-.slider-container .slide.active {
-    animation: slideIn 0.7s ease-out forwards;
-}
+    .swiper-slide {
+        width: 250px;
+        height: 170px;
+    }
 
-/* Hover Effects */
-.controls button {
-    transition: all 0.3s ease;
-}
+    .hero-section {
+        padding: 30px 0;
+    }
 
-.controls button:hover {
-    transform: scale(1.1);
-    background-color: rgba(0,0,0,0.1);
-}
-
-/* Scroll Reveal for Features */
-.feature {
-    transition: all 0.6s ease;
-    will-change: transform, opacity;
-}
-
-.feature:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    .feature {
+        padding: 15px 20px;
+    }
 }
