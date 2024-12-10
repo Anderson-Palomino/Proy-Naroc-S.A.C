@@ -57,16 +57,16 @@ app.get('/Reclamos', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'Reclamos.html'));
 });
 
-<<<<<<<<< Temporary merge branch 1
+
 app.get('/LogoNaroc', (req, res) => {
     res.sendFile(path.join(__dirname,'public','img','logo', 'NAROC_SAC Logo.png'));
 });
 
-=========
+
 app.get('/PreguntasFrecuentes', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'FAQ.html'));
 });
->>>>>>>>> Temporary merge branch 2
+
 // Error handling
 app.use((err, req, res, next) => {
     console.error(err.stack);
