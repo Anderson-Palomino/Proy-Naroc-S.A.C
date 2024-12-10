@@ -60,6 +60,10 @@ app.get('/Contactanos', (req, res) => {
 app.get('/Reclamos', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'Reclamos.html'));
 });
+
+app.get('/PreguntasFrecuentes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'faq.html'));
+});
 // Error handling
 app.use((err, req, res, next) => {
     console.error(err.stack);
