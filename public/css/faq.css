@@ -166,7 +166,38 @@ img:hover {
     width: 520px;
     height: auto;
 }
+.btn{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.btn-whatsapp i {
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #25D366; /* Color verde de WhatsApp */
+}
 
+.img-fluid {
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-fluid:hover {
+    transform: scale(1.1);
+}
+
+.btn-whatsapp {
+    transition: background-color 0.3s ease-in-out,
+     transform 0.2s ease-in-out;
+}
+
+.btn-whatsapp:hover {
+    background-color: orange;
+    transform: scale(1.05);
+}
+.bi-whatsapp {
+    transition: transform 0.3s ease-in-out;
+
+}
 /* Responsiveness */
 @media (max-width: 768px) {
     .about-content,
@@ -193,4 +224,5 @@ img:hover {
         width: 100%;
         margin-top: 20px;
     }
+    
 }
