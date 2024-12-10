@@ -62,7 +62,7 @@ app.get('/Reclamos', (req, res) => {
 });
 
 app.get('/PreguntasFrecuentes', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'faq.html'));
+    res.sendFile(path.join(__dirname, 'views', 'FAQ.html'));
 });
 // Error handling
 app.use((err, req, res, next) => {
