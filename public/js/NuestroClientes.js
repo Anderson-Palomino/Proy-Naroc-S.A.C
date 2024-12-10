@@ -1,67 +1,49 @@
-
-const slider = document.querySelector('.slider');
-const slides = document.querySelectorAll('.slide');
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-
-let currentIndex = 0;
-
-// Set active slide
-function updateActiveSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) {
-            slide.classList.add('active');
+/* NuestrosClientes.js */
+// Asegúrate de importar Swiper desde CDN en el HTML
+document.addEventListener('DOMContentLoaded', function() {
+    const swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        loop: true,
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2,
+            slideShadows: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+            },
+            640: {
+                slidesPerView: 'auto',
+            }
         }
     });
 
-    slider.style.transform = `translateX(-${index * 100}%)`;
-}
-
-// Go to next slide
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateActiveSlide(currentIndex);
-}
-
-// Go to previous slide
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateActiveSlide(currentIndex);
-}
-
-// Event listeners
-nextButton.addEventListener('click', nextSlide);
-prevButton.addEventListener('click', prevSlide);
-
-// Initialize
-updateActiveSlide(currentIndex);
-
-// Enhanced Slider Animation
-document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slide');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    let currentSlide = 0;
-
-    function showSlide(index) {
-        // Remove active class from all slides
-        slides.forEach(slide => {
-            slide.classList.remove('active');
-        });
-
-        // Add active class to current slide
-        slides[index].classList.add('active');
-    }
-
-    nextButton.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
+    // Pause autoplay on hover
+    const swiperContainer = document.querySelector('.swiper-container');
+    
+    swiperContainer.addEventListener('mouseenter', () => {
+        swiper.autoplay.stop();
     });
-
-    prevButton.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
+    
+    swiperContainer.addEventListener('mouseleave', () => {
+        swiper.autoplay.start();
     });
 });
-
