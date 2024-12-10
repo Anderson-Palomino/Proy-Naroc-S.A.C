@@ -58,10 +58,6 @@ app.get('/Reclamos', (req, res) => {
 });
 
 
-app.get('/PreguntasFrecuentes', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'FAQ.html'));
-});
-
 app.get('/LogoNaroc', (req, res) => {
     res.sendFile(path.join(__dirname,'public','img','logo', 'NAROC_SAC Logo.png'));
 });
@@ -70,6 +66,10 @@ app.get('/Serv1', (req, res) => {
     res.sendFile(path.join(__dirname,'views','serv1.html'));
 });
 
+
+app.get('/PreguntasFrecuentes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'FAQ.html'));
+});
 
 // Error handling
 app.use((err, req, res, next) => {
