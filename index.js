@@ -57,9 +57,15 @@ app.get('/Reclamos', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'Reclamos.html'));
 });
 
+
+app.get('/PreguntasFrecuentes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'FAQ.html'));
+});
+
 app.get('/LogoNaroc', (req, res) => {
     res.sendFile(path.join(__dirname,'public','img','logo', 'NAROC_SAC Logo.png'));
 });
+
 
 // Error handling
 app.use((err, req, res, next) => {
