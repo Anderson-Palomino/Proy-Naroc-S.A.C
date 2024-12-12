@@ -32,8 +32,9 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Build project
-      run: npm run build
+    # Remove the Build project step if not needed
+    # - name: Build project
+    #   run: npm run build
 
     - name: Build Docker image
       run: docker build -t proy-naroc-sac .
