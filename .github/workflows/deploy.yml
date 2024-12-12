@@ -1,12 +1,23 @@
-name: Deploy Node.js application
+name: publish
 
 on:
   push:
     branches:
       - master
+      - Anderson
+      - Aldo
+      - Rodrigo
+      - Chumi
+  pull_request:
+    branches:
+      - master
+      - Anderson
+      - Aldo
+      - Rodrigo
+      - Chumi
 
 jobs:
-  deploy:
+  create-docker-image:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,13 +27,16 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '23'
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci
 
-    - name: Run build
+    - name: Build project
       run: npm run build
 
-    - name: Deploy
-      run: npm start
+    - name: Build Docker image
+      run: docker build -t proy-naroc-sac .
+
+    - name: Run Docker container
+      run: docker run -d -p 3000:3000 proy-naroc-sac
