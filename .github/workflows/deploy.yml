@@ -39,5 +39,19 @@ jobs:
     - name: Build Docker image
       run: docker build -t proy-naroc-sac .
 
-    - name: Run Docker container
-      run: docker run -d -p 3000:3000 proy-naroc-sac
+  deploy:
+    runs-on: ubuntu-latest
+    needs: create-docker-image
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Deploy to Hostinger via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        ftp-server: ftp://ftp.your-hostinger-domain.com
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./ # Adjust this to your build output directory
+        server-dir: /path/to/your/server/directory
