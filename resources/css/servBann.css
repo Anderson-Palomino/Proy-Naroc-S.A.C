@@ -1,7 +1,3 @@
-.servBann1 img {
-    transform: translate(-50%, -40%);
-}
-
 .card {
     background-color: none;
 }
@@ -13,10 +9,6 @@
 
 .border-custom {
     border: none;
-}
-
-.size-custom {
-    /*width: 22rem;}*/
 }
 
 .btn-custom {
@@ -39,10 +31,6 @@
 .accordion-custom {
     background-color: #ebb786;
     border-bottom: 2px solid white;
-}
-
-.accordion-custom:last-child {
-    border-bottom: ;
 }
 
 .full-height-img {
