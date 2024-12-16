@@ -126,7 +126,6 @@ hr {
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
 .whatsapp-float:hover {
   transform: scale(1.1);
   background-color: #20ba5a;

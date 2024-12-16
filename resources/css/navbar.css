@@ -16,7 +16,13 @@
     margin-left: 20px; /* Ajusta el margen izquierdo del logo */
     margin-right: 20px; /* Ajusta el margen derecho del logo */
 }
+img {
+    transition: transform 0.3s ease-in-out; 
+}
 
+img:hover {
+    transform: scale(1.1); 
+}
 /* Media queries for mobile devices */
 @media (max-width: 768px) {
     .navbar-nav .nav-link {
@@ -28,4 +34,5 @@
         margin-left: 10px; /* Ajusta el margen izquierdo del logo en dispositivos móviles */
         margin-right: 10px; /* Ajusta el margen derecho del logo en dispositivos móviles */
     }
+    
 }

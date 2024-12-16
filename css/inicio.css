@@ -1,4 +1,11 @@
 /* General Section Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Secciones Generales */
 .section {
     padding: 50px 15px;
@@ -9,6 +16,107 @@
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 30px;
+}
+
+/* Banner Section */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 450px; /* Altura fija */
+    overflow: hidden;
+    display: flex; /* Flexbox aplicado */
+    align-items: center; /* Alinea verticalmente */
+    justify-content: space-between; /* Espacia elementos */
+    background-color: #000; /* Fondo de seguridad */
+}
+
+.front-banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Flexbox aplicado */
+    align-items: center;
+    justify-content: space-between; /* Logo a la izquierda, texto a la derecha */
+}
+
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la imagen se deforme */
+    z-index: 0;
+}
+
+.overlay {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye logo y texto */
+    width: 100%;
+    padding: 2rem;
+    z-index: 2;
+}
+
+.banner-logo {
+    width: 20%;
+    max-width: 250px;
+    height: auto;
+    margin-left: 1rem; /* Pegado a la izquierda con un pequeño margen */
+    transition: transform 0.3s ease-in-out; /* Efecto de zoom */
+}
+
+.banner-logo:hover {
+    transform: scale(1.1); /* Zoom solo en el logo */
+}
+
+.banner-text {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    max-width: 600px;
+    color: white;
+    text-align: right; /* Texto alineado a la derecha */
+    margin-right: 1rem; /* Margen derecho para separación */
+}
+
+.banner-text p {
+    margin: 0; /* Elimina márgenes predeterminados */
+}
+
+/* Empresas Section */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    width: 240px;
+    height: 208px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    max-height: 160px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out; /* Efecto de zoom */
+}
+
+.card img:hover {
+    transform: scale(1.1); /* Zoom solo en las imágenes */
 }
 
 /* Servicios */
@@ -107,232 +215,70 @@
     transition: transform 0.3s ease-in-out;
 }
 
-/* Banner */
-.banner {
-    position: relative;
-    text-align: center;
-    color: white;
-    max-width: 100%;
-    height: 450px;
-    overflow: hidden;
-}
-
-.banner img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.banner .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Oscurecer la imagen de fondo */
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alinear a la izquierda */
-    justify-content: center;
-    padding-left: 2rem; /* Margen desde la izquierda */
-    gap: 1rem; /* Espaciado entre elementos */
-}
-
-.banner .overlay img {
-    width: 40%; /* Escalado relativo */
-    max-width: 300px; /* Máximo tamaño del logo */
-    height: auto;
-}
-
-.banner-text {
-    position: absolute;
-    top: 50%;
-    right: 5%; /* Asegura que esté alineado a la derecha */
-    transform: translateY(-50%);
-    font-size: 2rem; /* Tamaño inicial */
-    color: white;
-    text-align: right; /* Alinea el texto hacia la derecha */
-    z-index: 2;
-    line-height: 1.5;
-    max-width: 40%; /* Limita el ancho del texto */
-}
-
-/* Media Queries para Responsividad */
+/* Responsividad del Banner */
 @media (max-width: 1200px) {
     .banner-text {
-        font-size: 1.5rem; /* Reducir significativamente el tamaño */
-        max-width: 50%; /* Ajustar el ancho */
-        right: 4%; /* Ajustar margen derecho */
-        background-color: orange;
+        font-size: 1.3rem;
+        max-width: 500px;
     }
 }
 
 @media (max-width: 992px) {
     .banner-text {
-        font-size: 1.2rem;
-        max-width: 60%;
-        right: 3%; /* Ajustar más el margen derecho */
-        background-color:aqua;
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+
+    .banner-logo {
+        width: 30%;
     }
 }
 
 @media (max-width: 768px) {
+    .banner {
+        height: 300px;
+    }
+
+    .overlay {
+        padding: 1rem;
+    }
+
+    .banner-logo {
+        width: 25%;
+    }
+
     .banner-text {
+        text-align: center;
         font-size: 1rem;
-        max-width: 100%;
-        right: 25%; /* Mantiene el texto alineado a la derecha */
-        background-color: green;
+        margin-right: 0;
     }
 }
 
 @media (max-width: 576px) {
-    .banner-text {
-        /font-size: 0.9rem; /* Más pequeño en pantallas pequeñas */
-        max-width: 100%;
-        /*right: 2%;*/
-        background-color: red;
-    }
-}
-
-@media (max-width: 480px) {
-    .banner-text {
-        font-size: 0.7rem; /* Más pequeño aún para pantallas muy pequeñas */
-        max-width: 100%;
-        /*right: 1%;*/
-        background-color: black;
-    }
-}
-
-/* Banner Logo */
-.banner-logo {
-    position: absolute;
-    top: 50%;
-    left: 10%; /* Fijado más a la izquierda */
-    transform: translateY(-50%);
-    width: 50%; /* Escalado relativo */
-    max-width: 632px; /* Tamaño máximo para pantallas grandes */
-    height: auto; /* Mantiene proporciones */
-}
-
-/* Media Queries para responsividad del logo */
-@media (max-width: 768px) {
-    .banner-logo {
-        width: 20%; /* Reducido significativamente en tablets */
-        max-width: 150px;
-        left: 5%; /* Asegurar posición a la izquierda */
-        display: none; /*Se oculata el logo en pantallas pequeñas ya que el logo está vicible en el navbar*/
-    }
-}
-
-@media (max-width: 480px) {
-    .banner-logo {
-        width: 15%; /* Muy pequeño para móviles */
-        max-width: 100px;
-        left: 5%;
-    }
-}
-
-/* Media Queries para el banner completo */
-@media (max-width: 768px) {
     .banner {
-        height: 300px; /* Reducir altura del banner */
+        height: 250px;
     }
 
-    .banner .overlay img {
-        width: 50%; /* Ajustar tamaño del logo */
-        max-width: 150px;
+    .banner-logo {
+        width: 20%;
     }
 
     .banner-text {
-        font-size: 0.8rem; /* Reducir texto considerablemente */
+        font-size: 0.9rem;
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
     .banner {
-        height: 200px; /* Más pequeño para móviles */
+        height: 200px;
     }
 
-    .banner .overlay {
-        padding-left: 0.5rem; /* Reducir padding */
-    }
-
-    .banner .overlay img {
-        width: 40%; /* Logo más pequeño */
-        max-width: 100px;
+    .banner-logo {
+        display: none; /* Oculta el logo en pantallas muy pequeñas */
     }
 
     .banner-text {
-        font-size: 0.6rem; /* Texto mucho más pequeño */
+        font-size: 0.8rem;
     }
-}
-
-
-/* Empresas */
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 10px;
-    width: 240px; 
-    height: 208px; 
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; 
-}
-
-.card img {
-    width: 100%;
-    height: auto; 
-    max-width: 200px; 
-    max-height: 160px; 
-    object-fit: contain; 
-}
-
-img {
-    transition: transform 0.3s ease-in-out; 
-}
-
-img:hover {
-    transform: scale(1.1); 
-}
-
-.image-lummi-category-avatars:hover,
-.image:hover {
-    transform: scale(1.1); 
-}
-
-.button2 {
-    transition: transform 0.3s ease-in-out; 
-}
-
-.button2:hover {
-    transform: scale(1.1);
-    cursor: pointer; 
-}
-
-.button2:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    background-color: #f57c00; 
-}
-.testimonial-back{
-    background-color: #4d95fd;
-}
-
-p{
-    color: white;
 }
