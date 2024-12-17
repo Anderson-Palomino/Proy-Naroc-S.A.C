@@ -1,16 +1,13 @@
 /* General Styling */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
-}
-
 body {
+    min-height: 100vh; /* Asegura que la página siempre ocupe el 100% de la altura */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+}
+
+/* Contenedor principal */
+main {
+    flex: 1; /* Hace que el contenido principal ocupe todo el espacio disponible */
 }
 
 main {
@@ -60,6 +57,10 @@ main {
     background-image: url("/img/quienesomos/Banner quienes somos.png");
     background-size: cover;
     background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .overlay {
