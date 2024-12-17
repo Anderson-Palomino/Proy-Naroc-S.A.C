@@ -1,7 +1,21 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100vh; /* Ensure the footer is at the bottom */
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
 .content {
     position: relative;
     padding: 2px;
 }
+
 .shadow-box {
     position: absolute;
     top: -10px;
@@ -12,6 +26,7 @@
     border-radius: 10px;
     z-index: -1;
 }
+
 .content img {
     border-radius: 10px;
     position: relative;
@@ -20,11 +35,13 @@
     height: 300px; /* Ajusta la altura según tus necesidades */
     object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
 }
+
 .btn-whatsapp i {
     margin-left: 10px;
     font-size: 1.5rem;
     color: #25D366; /* Color verde de WhatsApp */
 }
+
 .img-fluid {
     transition: transform 0.3s ease-in-out;
 }
@@ -42,9 +59,9 @@
     background-color: orange;
     transform: scale(1.05);
 }
+
 .bi-whatsapp {
     transition: transform 0.3s ease-in-out;
-
 }
 
 .shadow-box {
