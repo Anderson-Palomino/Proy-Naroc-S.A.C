@@ -1,11 +1,15 @@
 /* General Section Styling */
+
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    min-height: 100vh; /* Asegura que la página siempre ocupe el 100% de la altura */
+    display: flex;
+    flex-direction: column;
 }
 
+/* Contenedor principal */
+main {
+    flex: 1; /* Hace que el contenido principal ocupe todo el espacio disponible */
+}
 /* Secciones Generales */
 .section {
     padding: 50px 15px;
