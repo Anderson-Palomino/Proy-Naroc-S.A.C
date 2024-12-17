@@ -17,7 +17,7 @@
     position: relative;
     z-index: 1;
     width: 100%; /* Asegura que todas las imágenes tengan el mismo ancho */
-    height: auto; /* Adjust height for responsiveness */
+    height: 300px; /* Ajusta la altura según tus necesidades */
     object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
 }
 .btn-whatsapp i {
