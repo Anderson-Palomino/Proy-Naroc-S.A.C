@@ -27,8 +27,13 @@ footer a:hover {
 }
 
 ul.list-unstyled a:hover {
-  text-decoration: underline;
-  color: black;
+  color: blue;
+}
+
+ul.list-unstyled {
+  text-align: left;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .footer-icons a {
@@ -180,3 +185,4 @@ hr {
   outline: none;
   box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.5), 0 5px 15px rgba(37, 211, 102, 0.3);
 }
+
