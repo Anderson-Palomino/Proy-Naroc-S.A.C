@@ -1,178 +1,193 @@
-/* General Styles */
-body {
-    margin: 0;
-    font-family: Roboto, sans-serif;
-    background-color: #eee;
-    height: auto;
+/* Encapsulamos todas las variables en un namespace específico */
+.clientes-page {
+    --primary-color: #ff9500;
+    --text-color: #000000;
+    --bg-color: #eee;
+    --white: #fff;
+    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+    --spacing-sm: 20px;
+    --spacing-md: 30px;
+    --spacing-lg: 50px;
+    
 }
 
-#main-container {
+/* Contenedor principal específico */
+.clientes-page {
+    min-height: 100vh;
+    font-family: Roboto, sans-serif;
+}
+
+.clientes-main {
     display: flex;
     flex-direction: column;
-    min-height: 70vh;
+    min-height: calc(100vh - 60px); /* Ajusta según la altura de tu footer */
 }
 
-#content {
+.clientes-content {
     flex: 1;
 }
 
-/* Hero Section */
-.hero-section {
+/* Hero Section específico */
+.clientes-hero {
     position: relative;
     width: 100%;
     height: auto;
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 50px 0;
+    padding: var(--spacing-lg) 0;
 }
 
-.hero-section::before {
+.clientes-hero::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("/img/NuestrosClientes/baner hd.png") no-repeat center center/cover;
-    background-color: rgba(57, 0, 212, 0);
+    background: url("/img/NuestrosClientes/baner\ hd.png") no-repeat center center/cover;
     z-index: 1;
     opacity: 0.5;
 }
 
-.hero-content {
+.clientes-hero-content {
     position: relative;
     z-index: 2;
     text-align: center;
-    color: #000000;
+    color: var(--text-color);
     width: 100%;
-    padding: 0 20px;
+    padding: 0 var(--spacing-sm);
 }
 
-.overlay {
+.clientes-overlay {
     text-align: center;
-    padding: 30px;
-    border-radius: 10px;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
 }
 
-h1 {
+/* Encapsulamos los estilos de texto */
+.clientes-hero h1 {
     font-size: 4.5rem;
     font-weight: bold;
-    color: #000000;
-    margin-bottom: 30px;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
     line-height: 1.2;
 }
 
-h1 .highlight {
-    color: #ff9500;
+.clientes-hero h1 .highlight {
+    color: var(--primary-color);
 }
 
-/* Feature List */
-.feature-list {
+/* Feature List específica */
+.clientes-features {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: var(--spacing-md);
     max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
+    margin: var(--spacing-lg) auto;
+    padding: 0 var(--spacing-sm);
 }
 
-.feature {
-    background-color: #fff;
-    padding: 25px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.clientes-feature {
+    background-color: var(--white);
+    padding: 25px var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
     max-width: 400px;
     margin: 0 auto;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
 }
 
-.feature:hover {
+.clientes-feature:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-lg);
 }
 
-/* Swiper Container */
-.swiper-container {
+/* Swiper específico para clientes */
+.clientes-swiper {
     width: 100%;
     padding: 60px 0;
-    background-color: #f5f5f500;
+    background-color: transparent;
     overflow: hidden;
 }
 
-.swiper-wrapper {
+.clientes-swiper .swiper-wrapper {
     align-items: center;
     min-height: 400px;
 }
 
-.swiper-slide {
+.clientes-swiper .swiper-slide {
     width: 400px;
     height: 250px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    will-change: transform;
 }
 
-.swiper-slide img {
+.clientes-swiper .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
 }
 
-.swiper-slide-active {
+.clientes-swiper .swiper-slide-active {
     transform: scale(1.2);
     z-index: 2;
 }
 
-.swiper-slide-prev,
-.swiper-slide-next {
+.clientes-swiper .swiper-slide-prev,
+.clientes-swiper .swiper-slide-next {
     transform: scale(0.8);
     opacity: 0.6;
 }
 
-/* Navigation Controls */
-.swiper-button-next,
-.swiper-button-prev {
+/* Navegación específica */
+.clientes-swiper .swiper-button-next,
+.clientes-swiper .swiper-button-prev {
     width: 50px;
     height: 50px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
-    color: #000;
+    color: var(--text-color);
     --swiper-navigation-size: 25px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    background-color: #fff;
+.clientes-swiper .swiper-button-next:hover,
+.clientes-swiper .swiper-button-prev:hover {
+    background-color: var(--white);
     transform: scale(1.1);
 }
 
-.swiper-pagination {
+.clientes-swiper .swiper-pagination {
     position: relative;
-    margin-top: 30px;
+    margin-top: var(--spacing-md);
 }
 
-.swiper-pagination-bullet {
+.clientes-swiper .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
-    background: #000;
+    background: var(--text-color);
     opacity: 0.5;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
 
-.swiper-pagination-bullet-active {
+.clientes-swiper .swiper-pagination-bullet-active {
     opacity: 1;
-    background: #ff9500;
+    background: var(--primary-color);
     transform: scale(1.2);
 }
 
-/* Animations */
-@keyframes fadeInUp {
+/* Animaciones específicas */
+@keyframes clientesFadeInUp {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -183,67 +198,68 @@ h1 .highlight {
     }
 }
 
-.hero-section .overlay h1 {
-    animation: fadeInUp 1s ease-out forwards;
+.clientes-hero .clientes-overlay h1 {
+    animation: clientesFadeInUp 1s ease-out forwards;
     opacity: 0;
     animation-delay: 0.3s;
+    will-change: transform, opacity;
 }
 
-.feature-list .feature {
+.clientes-features .clientes-feature {
     opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
+    animation: clientesFadeInUp 0.8s ease-out forwards;
 }
 
-.feature:nth-child(1) { animation-delay: 0.6s; }
-.feature:nth-child(2) { animation-delay: 0.9s; }
-.feature:nth-child(3) { animation-delay: 1.2s; }
+.clientes-feature:nth-child(1) { animation-delay: 0.6s; }
+.clientes-feature:nth-child(2) { animation-delay: 0.9s; }
+.clientes-feature:nth-child(3) { animation-delay: 1.2s; }
 
-/* Responsive Styles */
+/* Media Queries */
 @media (max-width: 768px) {
-    h1 {
+    .clientes-hero h1 {
         font-size: 3rem;
     }
 
-    .swiper-wrapper {
+    .clientes-swiper .swiper-wrapper {
         min-height: 300px;
     }
 
-    .swiper-slide {
+    .clientes-swiper .swiper-slide {
         width: 300px;
         height: 200px;
     }
 
-    .swiper-slide-active {
+    .clientes-swiper .swiper-slide-active {
         transform: scale(1.1);
     }
 
-    .swiper-button-next,
-    .swiper-button-prev {
+    .clientes-swiper .swiper-button-next,
+    .clientes-swiper .swiper-button-prev {
         width: 40px;
         height: 40px;
         --swiper-navigation-size: 20px;
     }
 
-    .feature {
+    .clientes-feature {
         padding: 20px 25px;
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
+    .clientes-hero h1 {
         font-size: 2.5rem;
     }
 
-    .swiper-slide {
+    .clientes-swiper .swiper-slide {
         width: 250px;
         height: 170px;
     }
 
-    .hero-section {
-        padding: 30px 0;
+    .clientes-hero {
+        padding: var(--spacing-md) 0;
     }
 
-    .feature {
-        padding: 15px 20px;
+    .clientes-feature {
+        padding: 15px var(--spacing-sm);
     }
 }
