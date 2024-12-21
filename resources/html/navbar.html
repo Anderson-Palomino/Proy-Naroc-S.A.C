@@ -17,8 +17,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/views/quienesomos.html">Quienes Somos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/views/services.html">Servicios</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Servicios
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/views/services.html">Todos los Servicios</a></li>
+                                <li><a class="dropdown-item" href="/views/serv1.html">Instalacion de aire acondicionado</a></li>
+                                <li><a class="dropdown-item" href="/views/serv2.html">Instalacion de sistemas electricos</a></li>
+                                <li><a class="dropdown-item" href="/views/serv3.html">Instalacion de Sistemas contra incendios</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/views/NuestrosClientes.html">Nuestros clientes</a>
@@ -27,6 +35,10 @@
                             <a class="nav-link" href="/views/contactanos.html">Contactanos</a>
                         </li>
                     </ul>
+                    <form class="d-flex ms-3">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
                 </div>
             </div>
         </nav>
