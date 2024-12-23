@@ -112,3 +112,18 @@
     transition: transform 0.3s ease-in-out;
 
 }
+
+.icon-bg {
+    background: #e0ac1c;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 10%;
+}
+
+.feature-arrow {
+    background: linear-gradient(to right, #e0ac1c, #e29c04);
+    padding: 10px 20px;
+    border-radius: 25px;
+    position: relative;
+    width: 100%;
+}
