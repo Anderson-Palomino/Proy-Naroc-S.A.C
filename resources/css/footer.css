@@ -4,7 +4,7 @@ footer {
   padding: 0; /* Remove padding */
   text-align: center;
   z-index: 1;
-  opacity: 0.87;
+  opacity: 0.95;
 }
 
 footer::before {
