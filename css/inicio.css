@@ -30,7 +30,7 @@ main {
     overflow: hidden;
     display: flex; /* Flexbox aplicado */
     align-items: center; /* Alinea verticalmente */
-    justify-content: space-between; /* Espacia elementos */
+    justify-content: center; /* Centra elementos */
     background-color: #000; /* Fondo de seguridad */
 }
 
@@ -40,8 +40,9 @@ main {
     height: 100%;
     display: flex; /* Flexbox aplicado */
     align-items: center;
-    justify-content: space-between; /* Logo a la izquierda, texto a la derecha */
+    justify-content: center; /* Centra elementos */
 }
+
 
 .banner-image {
     position: absolute;
@@ -52,23 +53,39 @@ main {
     object-fit: cover; /* Evita que la imagen se deforme */
     z-index: 0;
 }
-
-.overlay {
+.banner-image:hover {
+    transform: none;
+}
+.highlight-text {
+    font-size: 1.8rem; /* Ajusta el tamaño según sea necesario */
+    color: #000; /* Asegúrate de que el color sea visible sobre el fondo */
+    text-align: justify; /* Alinea el texto desde la izquierda hasta la derecha */
     position: relative;
+    
+}
+.overlay {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Distribuye logo y texto */
     width: 100%;
     padding: 2rem;
-    z-index: 2;
+    z-index: 1;
 }
-
+.overlay-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Color negro con opacidad */
+    z-index: 1;
+}
 .banner-logo {
     width: 20%;
     max-width: 250px;
     height: auto;
-    margin-left: 1rem; /* Pegado a la izquierda con un pequeño margen */
-    transition: transform 0.3s ease-in-out; /* Efecto de zoom */
+    margin-right: 1rem; /* Espacio entre logo y texto */
+    z-index: 2; /* Asegura que el logo esté por encima de la superposición */
 }
 
 .banner-logo:hover {
@@ -76,12 +93,11 @@ main {
 }
 
 .banner-text {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    max-width: 600px;
-    color: white;
-    text-align: right; /* Texto alineado a la derecha */
-    margin-right: 1rem; /* Margen derecho para separación */
+    max-width: 80%; /* Ajusta el ancho máximo según sea necesario */
+    margin: 0 auto; /* Centra el contenedor del texto */
+    text-align: center; /* Centra el texto */
+    z-index: 2; 
+    padding: 1rem; /* Añade un poco de padding para evitar que el texto toque los bordes */
 }
 
 .banner-text p {
@@ -149,8 +165,9 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    transition: transform 0.6s ease, opacity 0.3s ease;
-    backface-visibility: hidden; /* Oculta el contenido cuando gire */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,7 +175,9 @@ main {
     padding: 20px;
     border-radius: 8px;
 }
-
+.testimonial:hover .testimonial-content {
+    transform: rotateY(180deg);
+}
 /* Frente de la tarjeta */
 .testimonial-content {
     background-color: #fafaf9;
@@ -167,9 +186,18 @@ main {
 
 /* Reverso de la tarjeta */
 .testimonial-back {
-    background-color: white; /* Fondo blanco al voltear la tarjeta */
-    color: #2c2c2c;
-    transform: rotateY(180deg); /* Gira 180 grados para mostrar el reverso */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: orange; /* Color naranja al girar */
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Efecto de rotación al pasar el mouse */
@@ -225,6 +253,9 @@ main {
         font-size: 1.3rem;
         max-width: 500px;
     }
+    .highlight-text {
+        font-size: 1.3rem; /* Ajusta el tamaño según sea necesario */
+    }
 }
 
 @media (max-width: 992px) {
@@ -236,13 +267,18 @@ main {
     .banner-logo {
         width: 30%;
     }
+    .highlight-text {
+        font-size: 1.1rem; /* Ajusta el tamaño según sea necesario */
+    }
 }
 
 @media (max-width: 768px) {
     .banner {
         height: 300px;
     }
-
+    .highlight-text {
+        font-size: 1rem; /* Ajusta el tamaño según sea necesario */
+    }
     .overlay {
         padding: 1rem;
     }
@@ -271,6 +307,9 @@ main {
         font-size: 0.9rem;
         text-align: center;
     }
+    .highlight-text {
+        font-size: 0.9rem; /* Ajusta el tamaño según sea necesario */
+    }
 }
 
 @media (max-width: 480px) {
@@ -281,7 +320,9 @@ main {
     .banner-logo {
         display: none; /* Oculta el logo en pantallas muy pequeñas */
     }
-
+    .highlight-text {
+        font-size: 0.8rem; /* Ajusta el tamaño según sea necesario */
+    }
     .banner-text {
         font-size: 0.8rem;
     }
