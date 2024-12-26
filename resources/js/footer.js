@@ -6,7 +6,7 @@ function loadFooter() {
             // Añadir el botón de WhatsApp después de cargar el footer
             if (!document.querySelector('.whatsapp-float')) {
                 const whatsappButton = document.createElement('a');
-                whatsappButton.href = 'https://wa.me/51123456789';
+                whatsappButton.href = 'https://wa.me/51966622289';
                 whatsappButton.className = 'whatsapp-float';
                 whatsappButton.target = '_blank';
                 whatsappButton.innerHTML = '<i class="fab fa-whatsapp"></i>';
