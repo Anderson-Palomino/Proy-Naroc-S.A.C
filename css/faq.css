@@ -43,7 +43,9 @@ main {
 .banner-text .somos {
     color: #FF9603;
 }
-
+.accordion-button{
+    font-weight: bold;
+}
 .subtext {
     font-size: 1.5em;
     color: white;
