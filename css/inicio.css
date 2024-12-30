@@ -58,7 +58,7 @@ main {
 }
 .highlight-text {
     font-size: 1.8rem; /* Ajusta el tamaño según sea necesario */
-    color: #000; /* Asegúrate de que el color sea visible sobre el fondo */
+    color: #ffffff; /* Asegúrate de que el color sea visible sobre el fondo */
     text-align: justify; /* Alinea el texto desde la izquierda hasta la derecha */
     position: relative;
     
