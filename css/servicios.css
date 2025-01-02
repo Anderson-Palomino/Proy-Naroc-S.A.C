@@ -13,7 +13,8 @@ body, html {
 
 .content {
     position: relative;
-    padding: 2px;
+    padding: 0; /* Remove padding to ensure shadow-box matches image size */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
 
 .shadow-box {
@@ -71,4 +72,32 @@ body, html {
 .content:hover .shadow-box {
     transform: translateY(-10px);
     opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .content img {
+        height: auto; /* Adjust image height for smaller screens */
+    }
+
+    .shadow-box {
+        top: 0; /* Adjust top position for smaller screens */
+        left: 0; /* Adjust left position for smaller screens */
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    }
+
+    .btn-whatsapp {
+        width: 100%; /* Make buttons full width on mobile */
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    .text-center {
+        font-size: 1.2rem; /* Adjust heading size for smaller screens */
+    }
+
+    .text-justify {
+        font-size: 0.9rem; /* Adjust paragraph size for smaller screens */
+    }
 }
