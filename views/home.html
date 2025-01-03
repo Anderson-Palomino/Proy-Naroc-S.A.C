@@ -14,6 +14,18 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .carousel-inner {
+            display: flex;
+
+            gap: 10px;
+
+            margin: 0 auto; /* Centrar el carrusel */
+            padding-left: 170px;
+            padding-right: 170px;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -28,9 +40,8 @@
                     <div class="overlay-bg"></div> <!-- Capa de superposición -->
                     <img src="/img/logo/LogoInicio.png" alt="Logo" class="banner-logo">
                     <div class="banner-text text-black text-decoration-none">
-                        <p class="highlight-text">Especialistas en Instalaciones eléctricas, 
-                            Sistema de alarma contraincendios, Aire acondicionado, Drywall 
-                            y Todo tipo de Acabados</p>
+                        <p class="highlight-text">Especialistas en Instalaciones eléctricas,Sistema de alarma
+                            contraincendios,Aire acondicionado, Drywall y Todo tipo de Acabados</p>
                     </div>
                 </div>
             </div>
@@ -39,43 +50,175 @@
         <!-- Servicios Section -->
         <div class="section" id="servicios">
             <div class="heading">Servicios</div>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <img class="image-lummi-category-avatars" src="/img/inicio/image-lummi-category-avatars0.png" />
-                        <div class="service-title">Instalación de Aire Acondicionado</div>
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="testimonial">
+                                    <div class="testimonial-content">
+                                        <img src="/img/inicio/image-lummi-category-avatars0.png" alt="Servicio 1"
+                                            class="d-block w-100">
+                                        <div class="service-title">Instalación de Aire Acondicionado</div>
+                                    </div>
+                                    <div class="testimonial-back">
+                                        <p>Ofrecemos la mejor instalación de aire acondicionado con soporte técnico profesional.</p>
+                                        <button>Más Información</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="testimonial">
+                                    <div class="testimonial-content">
+                                        <img src="/img/inicio/image-lummi-category-avatars1.png" alt="Servicio 2"
+                                            class="d-block w-100">
+                                        <div class="service-title">Sistemas Eléctricos</div>
+                                    </div>
+                                    <div class="testimonial-back">
+                                        <p>Soluciones eficientes para sistemas eléctricos industriales y domésticos.</p>
+                                        <button>Más Información</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="testimonial">
+                                    <div class="testimonial-content">
+                                        <img src="/img/inicio/image-lummi-category-avatars2.png" alt="Servicio 3"
+                                            class="d-block w-100">
+                                        <div class="service-title">Sistemas contra Incendios</div>
+                                    </div>
+                                    <div class="testimonial-back">
+                                        <p>Implementamos sistemas seguros contra incendios para proteger tu empresa y hogar.</p>
+                                        <button>Más Información</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="testimonial">
+                                    <div class="testimonial-content">
+                                        <img src="/img/servicios/Servicio-InstalacionDryWall.jpg" alt="Servicio 4"
+                                            class="d-block w-100">
+                                        <div class="service-title">Instalación de Drywall</div>
+                                    </div>
+                                    <div class="testimonial-back">
+                                        <p>Ofrecemos servicios profesionales de instalación de drywall para todo tipo de proyectos.</p>
+                                        <button>Más Información</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="testimonial-back">
-                        <p>Ofrecemos la mejor instalación de aire acondicionado con soporte técnico profesional.</p>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="testimonial">
+                                    <div class="testimonial-content">
+                                        <img src="/img/servicios/Servicio-Entubado.jpeg" alt="Servicio 5"
+                                            class="d-block w-100">
+                                        <div class="service-title">Entubado de Conduit</div>
+                                    </div>
+                                    <div class="testimonial-back">
+                                        <p>Realizamos instalaciones de entubado en conduit para proteger y organizar el cableado eléctrico.</p>
+                                        <button>Más Información</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="testimonial">
+                                    <div class="testimonial-content">
+                                        <img src="/img/servicios/Servicios-Camaras.png" alt="Servicio 6"
+                                            class="d-block w-100">
+                                        <div class="service-title">Instalación de Cámaras de Seguridad</div>
+                                    </div>
+                                    <div class="testimonial-back">
+                                        <p>Instalamos sistemas de cámaras de seguridad para monitorear y proteger tus espacios.</p>
+                                        <button>Más Información</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="testimonial">
+                                    <div class="testimonial-content">
+                                        <img src="/img/servicios/Servicio-Cableado.png" alt="Servicio 5"
+                                            class="d-block w-100">
+                                        <div class="service-title">Cableado Estructurado</div>
+                                    </div>
+                                    <div class="testimonial-back">
+                                        <p>Ofrecemos instalación de redes y cableado estructurado para empresas y hogares.</p>
+                                        <button>Más Información</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="testimonial">
+                                    <div class="testimonial-content">
+                                        <img src="/img/servicios/Servicio-Pozo.jpeg" alt="Servicio 5"
+                                            class="d-block w-100">
+                                        <div class="service-title">Construcción de Pozo a Tierra</div>
+                                    </div>
+                                    <div class="testimonial-back">
+                                        <p>Construimos pozos a tierra para garantizar la seguridad eléctrica de tus instalaciones.</p>
+                                        <button>Más Información</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="testimonial">
+                                    <div class="testimonial-content">
+                                        <img src="/img/servicios/Servicio-Ascensor.png" alt="Servicio 5"
+                                            class="d-block w-100">
+                                        <div class="service-title">Mantenimiento de Ascensores</div>
+                                    </div>
+                                    <div class="testimonial-back">
+                                        <p>Proveemos mantenimiento preventivo y correctivo para ascensores, asegurando su funcionamiento óptimo.</p>
+                                        <button>Más Información</button>
+                                    </div>    
+
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="testimonial">
+                                    <div class="testimonial-content">
+                                        <img src="/img/servicios/Servicio-Fierro.png" alt="Servicio 6"
+                                            class="d-block w-100">
+                                        <div class="service-title">Acero y Estructuras de Fierro</div>
+                                    </div>
+                                    <div class="testimonial-back">
+                                        <p>Diseñamos y construimos estructuras de acero y fierro para proyectos industriales y comerciales.</p>
+                                        <button>Más Información</button>
+                                    </div>  
+
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="testimonial">
+                                    <div class="testimonial-content">
+                                        <img src="/img/servicios/Servicio-Acabados.png" alt="Servicio 6"
+                                            class="d-block w-100">
+                                        <div class="service-title">Acabados en Granito, Mármol, Cuarzo, entre otros</div>
+                                    </div>
+                                    <div class="testimonial-back">
+                                        <p>Ofrecemos acabados de alta calidad en granito, mármol, cuarzo y otros materiales para tus espacios.</p>
+                                        <button>Más Información</button>
+                                    </div>     
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <img class="image-lummi-category-avatars" src="/img/inicio/image-lummi-category-avatars1.png" />
-                        <div class="service-title">Sistemas Eléctricos</div>
-                    </div>
-                    <div class="testimonial-back">
-                        <p>Soluciones eficientes para sistemas eléctricos industriales y domésticos.</p>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <img class="image-lummi-category-avatars" src="/img/inicio/image-lummi-category-avatars2.png" />
-                        <div class="service-title">Sistemas contra Incendios</div>
-                    </div>
-                    <div class="testimonial-back">
-                        <p>Implementamos sistemas seguros contra incendios para proteger tu empresa y hogar.</p>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <img class="image-lummi-category-avatars" src="/img/servicios/Servicio-InstalacionDryWall.jpg" />
-                        <div class="service-title">Instalación de Drywall</div>
-                    </div>
-                    <div class="testimonial-back">
-                        <p>Ofrecemos servicios profesionales de instalación de drywall para todo tipo de proyectos, garantizando calidad y durabilidad.</p>
-                    </div>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
 
@@ -95,7 +238,9 @@
             </div>
         </div>
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <!-- Footer -->
     <div id="footer-gaaa"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -103,6 +248,7 @@
         crossorigin="anonymous"></script>
     <script src="/resources/js/navbar.js"></script>
     <script src="/resources/js/footer.js"></script>
+
 </body>
 
 </html>
