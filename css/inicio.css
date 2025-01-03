@@ -145,7 +145,9 @@ main {
     justify-content: center;
     align-items: flex-start;
     gap: 20px;
+    transition: transform 0.5s ease-in-out;
     flex-wrap: wrap;
+    will-change: transform;
 }
 
 .testimonial {
@@ -156,8 +158,55 @@ main {
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     position: relative; /* Necesario para posicionar las caras */
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 5px;
+}
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+.testimonial-back button {
+    margin-top: 15px;
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
+.testimonial-back button:hover {
+    background-color: #000;
+}
+
+.testimonial:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+.carousel-control.prev {
+    left: 0;
+}
+
+.carousel-control.next {
+    right: 0;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
 /* Contenido de la tarjeta (frente) */
 .testimonial-content, .testimonial-back {
     position: absolute;
