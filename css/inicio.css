@@ -50,6 +50,7 @@ main {
     height: 100%;
     object-fit: cover; /* Evita que la imagen se deforme */
     z-index: 0;
+    filter: brightness(0.9);
 }
 .banner-image:hover {
     transform: none;
@@ -80,7 +81,7 @@ main {
 }
 .banner-logo {
     width: 20%;
-    max-width: 250px;
+    max-width: 300px;
     height: auto;
     margin-right: 1rem; /* Espacio entre logo y texto */
     z-index: 2; /* Asegura que el logo esté por encima de la superposición */
