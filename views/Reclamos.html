@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="/resources/css/footer.css">
     <link rel="stylesheet" href="/resources/css/navbar.css">
     <link rel="stylesheet" href="/css/Reclamos.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
@@ -36,18 +37,21 @@
                 <!-- Form -->
                 <div class="col-lg-6">
                     <div class="form-container">
-                        <form id="complaint-form">
+                        <form action="https://formsubmit.co/1e06356bd103fcb29e1f950663bd2aa7" method="POST"
+                            id="complaint-form">
                             <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
+                            <input type="text" id="name" name="Nombre" placeholder="Ingresa tu nombre" required>
 
                             <label for="email">Correo Electrónico</label>
-                            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                            <input type="email" id="email" name="Correo" placeholder="ejemplo@correo.com" required>
 
                             <label for="message">Mensaje</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí"
+                            <textarea id="message" name="Mensaje" rows="4" placeholder="Escribe tu mensaje aquí"
                                 required></textarea>
 
                             <button type="submit" class="btn btn-primary w-25">Enviar Reclamo</button>
+                            <input type="hidden" name="_next" value="http://narocsac.com/">
+                            <input type="hidden" name="_captcha" value="true">
                         </form>
                     </div>
                 </div>
@@ -58,9 +62,9 @@
                         <h2>Contáctanos</h2>
                         <p>Déjanos tus datos y te responderemos pronto.</p>
                         <ul class="list-unstyled">
-                            <li><strong>Correo Electrónico:</strong> contacto@reclamos.com</li>
-                            <li><strong>Teléfono:</strong> +1 (555) 123-4567</li>
-                            <li><strong>Ubicación:</strong> Calle Ejemplo 123, Ciudad, País</li>
+                            <li><strong>Correo Electrónico:</strong>bnarciso@narocsac.com</li>
+                            <li><strong>Teléfono:</strong> +51 966 622 289</li>
+                            <li><strong>Ubicación:</strong> Calle Circunvalacion Km. 22 Mz. B Lte 07 A.A.H.H. Huascaran </li>
                         </ul>
                     </div>
                 </div>
@@ -75,8 +79,8 @@
         crossorigin="anonymous"></script>
     <script src="/resources/js/navbar.js"></script>
     <script src="/resources/js/footer.js"></script>
-    <script src="/ReclamosEmail.js"></script>
-    
+    <!-- <script src="/ReclamosEmail.js"></script> -->
+
 </body>
 
 </html>
