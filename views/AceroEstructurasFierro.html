@@ -1,120 +1,508 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Acero y Estructuras Fierro</title>
+    <title>Acero y Estructuras de Fierro - NAROC SAC</title>
     <link rel="icon" href="/img/logo/LogoNavBar.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/resources/css/navbar.css">
-    <link rel="stylesheet" href="/resources/css/banner.css">
-    <link rel="stylesheet" href="/resources/css/servBann.css">
-    <link rel="stylesheet" href="/resources/css/footer.css">
-    <link rel="stylesheet" href="/resources/css/genSty.css">
-    <link rel="stylesheet" href="/css/servicios.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --naroc-blue: #0047AB;
+            --naroc-orange: #FF6B35;
+            --naroc-red: #E63946;
+            --naroc-light-blue: #4A90E2;
+            --naroc-dark: #1a1a2e;
+            --light-bg: #ffffff;
+            --dark-text: #1a1a1a;
+            --light-text: #6c757d;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-soft: 0 10px 40px rgba(0, 71, 171, 0.12);
+            --shadow-hover: 0 15px 50px rgba(0, 71, 171, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark-text);
+            overflow-x: hidden;
+            padding-top: 100px;
+        }
+
+        /* Hero Section */
+        .service-hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
+            padding: 6rem 0 4rem;
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
+        }
+
+        .service-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .service-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-hero h1 .highlight {
+            color: var(--naroc-orange);
+        }
+
+        .service-hero p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        /* Content Section */
+        .content-section {
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(0, 71, 171, 0.1);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .service-image:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--light-text);
+            text-align: justify;
+            margin-bottom: 2rem;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid transparent;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 100%);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--naroc-orange);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--naroc-blue);
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            color: var(--naroc-orange);
+            transform: scale(1.1);
+        }
+
+        .feature-card h5 {
+            font-weight: 700;
+            color: var(--naroc-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: var(--light-text);
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .feature-list li::before {
+            content: '⚙️';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
+            color: white;
+            padding: 4rem 0;
+            margin: 4rem 0;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
+        }
+
+        .benefits-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--naroc-orange);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .benefit-item p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        /* Applications Section */
+        .applications-section {
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(0, 71, 171, 0.1);
+        }
+
+        .application-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .application-card:hover {
+            border-color: var(--naroc-blue);
+            transform: translateY(-3px);
+        }
+
+        .application-icon {
+            font-size: 2.5rem;
+            color: var(--naroc-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* WhatsApp Button */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-whatsapp:hover {
+            background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            color: white;
+        }
+
+        .btn-whatsapp i {
+            font-size: 1.4rem;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        /* Responsive */
+        @media (max-width: 991.98px) {
+            body {
+                padding-top: 90px;
+            }
+            
+            .service-hero {
+                padding: 5rem 0 3rem;
+            }
+
+            .service-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-section, .applications-section {
+                padding: 2rem;
+            }
+
+            .service-image {
+                height: 300px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .service-hero {
+                padding: 4rem 0 2rem;
+            }
+
+            .service-hero h1 {
+                font-size: 2rem;
+            }
+
+            .service-hero p {
+                font-size: 1rem;
+            }
+
+            .content-section, .applications-section {
+                padding: 1.5rem;
+            }
+
+            .benefits-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-grad">
+<body>
     <div id="navbar-placeholder"></div>
-    <div>
-        <div class="banner servBann1">
-            <img src="/img/ImgsCliente/Mantenimiento.jpeg" alt="Banner">
-            <div class="banner-text">
-                <span class="text-black servAnim1">Acero y</span>
-                <span class="text-orange servAnim1">Estructuras de Fierro</span>
-                <div class="banner-subtext servAnim1"></div>
+
+    <!-- Hero Section -->
+    <section class="service-hero" data-aos="fade-down">
+        <div class="container">
+            <div class="service-hero-content">
+                <h1><span class="highlight">Acero y Estructuras</span> de Fierro</h1>
+                <p>Soluciones estructurales robustas y duraderas para proyectos de gran escala</p>
             </div>
         </div>
-    </div>
-    <div class="container justify-content-md-center">
-        <div class="mb-3 border-custom">
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content-section" data-aos="fade-up">
             <div class="row align-items-center">
-                <div class="col-md-5 d-flex p-3 d-none d-md-block carousel slide carousel-fade servAnim1"
-                    data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="4000">
-                            <img src="/img/ImgsCliente/Mantenimiento.jpeg" class="prllgrm"
-                                alt="Instalacion de aire acondicionado">
-                        </div>
-                    </div>
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="/img/ImgsCliente/Mantenimiento.jpeg" 
+                         alt="Estructuras de acero y fierro profesionales" 
+                         class="service-image">
                 </div>
-                <div class="col-md-7">
-                    <div class="row text-center my-5 px-3">
-                        <div class="card-body">
-                            <p class="card-text fs-5" style="text-align: justify;">En la construcción de estructuras metálicas, el acero se utiliza
-                                principalmente debido a sus ventajas de alta resistencia, flexibilidad y facilidad de
-                                fabricación. Los elementos metálicos de acero, como vigas, columnas, conexiones y
-                                refuerzos, son esenciales en proyectos de gran escala, desde edificios hasta puentes.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-12 d-block d-md-none my-3">
-                        <img src="/img/servicios/instElec2.png" class="img-fluid rounded full-height-img servAnim1"
-                            alt="Instalacion de aire acondicionado">
-                    </div>
-                    <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-md-center">
-                        <div class="col servAnim2">
-                            <div class="card border-custom size-custom h-100">
-                                <div class="card-body cardBG">
-                                    <div class="row">
-                                        <div class="col-md-2"><i class="bi bi-1-circle fs-1"></i></div>
-                                        <div class="col-md-10">
-                                            <h5 class="card-title">Proceso de Fabricación y Montaje de Estructuras de
-                                                Acero</h5>
-                                            <ul class="card-text">
-                                                <li>Diseño</li>
-                                                <li>Fabricación</li>
-                                                <li>Transporte y Montaje</li>
-                                                <li>Revisión y Control de Calidad</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col servAnim2">
-                            <div class="card border-custom size-custom h-100">
-                                <div class="card-body cardBG">
-                                    <div class="row">
-                                        <div class="col-md-2"><i class="bi bi-2-circle fs-1"></i></div>
-                                        <div class="col-md-10">
-                                            <h5 class="card-title"> Ventajas de las Estructuras de Acero</h5>
-                                            <ul class="card-text">
-                                                <li>Resistencia</li>
-                                                <li>Durabilidad</li>
-                                                <li>Rapidez de ejecución</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-6">
+                    <div class="service-description">
+                        <p>En la construcción de estructuras metálicas, el acero se utiliza principalmente debido a sus ventajas de alta resistencia, flexibilidad y facilidad de fabricación.</p>
+                        <p>Los elementos metálicos de acero, como vigas, columnas, conexiones y refuerzos, son esenciales en proyectos de gran escala, desde edificios hasta puentes e infraestructuras industriales.</p>
+                        <p>Nuestro equipo especializado garantiza estructuras que combinan resistencia, durabilidad y eficiencia en cada proyecto.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container my-4">
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <a href="https://wa.me/51966622289" target="_blank">
-                    <button class="btn btn-primary btn-lg btn-whatsapp">
-                        Contáctanos <i class="bi bi-whatsapp"></i>
-                    </button>
-                </a>
+
+        <!-- Features Section -->
+        <div class="content-section" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="text-center mb-5" style="color: var(--naroc-blue); font-weight: 800;">Nuestros Procesos y Ventajas</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="bi bi-gear feature-icon"></i>
+                    <h5>Proceso de Fabricación y Montaje</h5>
+                    <ul class="feature-list">
+                        <li><strong>Diseño Estructural:</strong> Planificación detallada con software especializado y cálculos estructurales precisos</li>
+                        <li><strong>Fabricación Industrial:</strong> Corte, soldadura y conformado de piezas con maquinaria de última generación</li>
+                        <li><strong>Transporte y Montaje:</strong> Logística optimizada e instalación profesional en sitio</li>
+                        <li><strong>Control de Calidad:</strong> Inspecciones rigurosas en cada etapa del proceso</li>
+                        <li><strong>Tratamientos Superficiales:</strong> Aplicación de protección anticorrosiva y pintura industrial</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="250">
+                    <i class="bi bi-award feature-icon"></i>
+                    <h5>Ventajas de las Estructuras de Acero</h5>
+                    <ul class="feature-list">
+                        <li><strong>Alta Resistencia:</strong> Capacidad para soportar grandes cargas y esfuerzos estructurales</li>
+                        <li><strong>Durabilidad Superior:</strong> Larga vida útil con mínimo mantenimiento requerido</li>
+                        <li><strong>Rapidez de Ejecución:</strong> Tiempos de construcción significativamente reducidos</li>
+                        <li><strong>Flexibilidad de Diseño:</strong> Adaptabilidad a cualquier requerimiento arquitectónico</li>
+                        <li><strong>Sustentabilidad:</strong> Material 100% reciclable y procesos eco-eficientes</li>
+                        <li><strong>Precisión Dimensional:</strong> Tolerancias mínimas y acabados de alta calidad</li>
+                    </ul>
+                </div>
             </div>
         </div>
+
+        <!-- Applications Section -->
+        <div class="applications-section" data-aos="fade-up">
+            <h2 class="text-center mb-5" style="color: var(--naroc-blue); font-weight: 800;">Aplicaciones</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="application-card">
+                        <i class="bi bi-building application-icon"></i>
+                        <h5>Edificios Comerciales</h5>
+                        <p>Estructuras para centros comerciales, oficinas y edificios corporativos de múltiples pisos.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="application-card">
+                        <i class="bi bi-gear application-icon"></i>
+                        <h5>Estructuras Industriales</h5>
+                        <p>Naves industriales, almacenes, plantas de producción y estructuras para maquinaria pesada.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="application-card">
+                        <i class="bi bi-bridge application-icon"></i>
+                        <h5>Infraestructura Pública</h5>
+                        <p>Puentes, pasarelas peatonales, estaciones y otras obras de infraestructura urbana.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section" data-aos="fade-up">
+            <div class="container">
+                <h2 class="benefits-title">Beneficios de Elegirnos</h2>
+                <div class="row">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
+                        <i class="bi bi-shield-check benefit-icon"></i>
+                        <h4>Certificación de Calidad</h4>
+                        <p>Todos nuestros materiales y procesos cumplen con los más altos estándares internacionales de calidad y seguridad.</p>
+                    </div>
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="300">
+                        <i class="bi bi-clock benefit-icon"></i>
+                        <h4>Entrega Puntual</h4>
+                        <p>Compromiso con los plazos establecidos mediante una planificación rigurosa y gestión eficiente.</p>
+                    </div>
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="400">
+                        <i class="bi bi-graph-up-arrow benefit-icon"></i>
+                        <h4>Optimización de Costos</h4>
+                        <p>Soluciones eficientes que maximizan el rendimiento de la inversión sin comprometer la calidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="text-center my-5" data-aos="fade-up">
+            <h3 class="mb-4" style="color: var(--naroc-blue); font-weight: 700;">¿Listo para construir con la mejor estructura?</h3>
+            <p class="mb-4 fs-5" style="color: var(--light-text);">Contáctanos para una consultoría técnica gratuita y cotización personalizada</p>
+            <a href="https://wa.me/51966622289" target="_blank" class="btn btn-whatsapp">
+                Solicitar Cotización <i class="bi bi-whatsapp"></i>
+            </a>
+        </div>
     </div>
+
     <div id="footer-gaaa"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="/resources/js/navbar.js"></script>
     <script src="/resources/js/footer.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 
 </html>
