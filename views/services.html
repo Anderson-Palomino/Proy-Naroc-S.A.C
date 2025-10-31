@@ -1,369 +1,688 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nuestros Servicios</title>
-    <link rel="icon" href="/img/logo/LogoNavBar.png">
+    <title>Nuestros Servicios - NAROC SAC</title>
+    <link rel="icon" href="/img/logo/LogoNavBar.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/resources/css/navbar.css">
-    <link rel="stylesheet" href="/resources/css/banner.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/servicios.css">
-    <link rel="stylesheet" href="/resources/css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --naroc-blue: #0047AB;
+            --naroc-orange: #FF6B35;
+            --naroc-red: #E63946;
+            --naroc-light-blue: #4A90E2;
+            --naroc-dark: #1a1a2e;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-soft: 0 10px 40px rgba(0, 71, 171, 0.12);
+            --shadow-hover: 0 15px 50px rgba(0, 71, 171, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow-x: hidden;
+            color: var(--naroc-dark);
+            padding-top: 100px;
+        }
+
+        /* Banner Section */
+        .services-banner {
+            position: relative;
+            background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
+            padding: 8rem 0 5rem;
+            margin-bottom: 4rem;
+            overflow: hidden;
+        }
+
+        .services-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
+        }
+
+        .services-banner::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        .services-banner-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .services-banner h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .services-banner h1 .highlight {
+            color: var(--naroc-orange);
+        }
+
+        .services-banner p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+        }
+
+        /* Service Row */
+        .service-row {
+            background: white;
+            border-radius: 25px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid rgba(0, 71, 171, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-row::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
+            transform: scaleY(0);
+            transition: var(--transition);
+            transform-origin: top;
+        }
+
+        .service-row:hover::before {
+            transform: scaleY(1);
+        }
+
+        .service-row:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Service Image Container */
+        .content {
+            position: relative;
+        }
+
+        .content img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: var(--transition);
+            border: 4px solid white;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .content:hover img {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--naroc-orange);
+        }
+
+        .shadow-box {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 71, 171, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+            border-radius: 20px;
+            top: 15px;
+            left: -10px;
+            z-index: -1;
+        }
+
+        /* Service Text */
+        .service-row h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--naroc-blue);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .service-row h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--naroc-orange) 0%, var(--naroc-red) 100%);
+            border-radius: 2px;
+        }
+
+        .service-row p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a4a4a;
+            font-weight: 500;
+            text-align: justify;
+            margin-bottom: 2rem;
+        }
+
+        /* WhatsApp Button */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-whatsapp:hover {
+            background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            color: white;
+        }
+
+        .btn-whatsapp i {
+            font-size: 1.4rem;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        /* Alternating Layout */
+        .service-row.reverse {
+            direction: rtl;
+        }
+
+        .service-row.reverse > * {
+            direction: ltr;
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-top: 3rem;
+            text-align: center;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
+        }
+
+        .cta-section h2 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-section .btn-cta {
+            background: linear-gradient(135deg, var(--naroc-orange) 0%, var(--naroc-red) 100%);
+            border: none;
+            border-radius: 50px;
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: white;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .cta-section .btn-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.5);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 991.98px) {
+            body {
+                padding-top: 90px;
+            }
+            
+            .services-banner {
+                padding: 6rem 0 4rem;
+            }
+
+            .services-banner h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-banner p {
+                font-size: 1.1rem;
+            }
+
+            .service-row {
+                padding: 2rem;
+            }
+
+            .service-row h2 {
+                font-size: 1.7rem;
+            }
+
+            .content img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .services-banner {
+                padding: 5rem 0 3rem;
+            }
+
+            .services-banner h1 {
+                font-size: 2rem;
+            }
+
+            .services-banner p {
+                font-size: 1rem;
+            }
+
+            .service-row {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .service-row h2 {
+                font-size: 1.5rem;
+            }
+
+            .service-row p {
+                font-size: 1rem;
+            }
+
+            .content img {
+                height: 250px;
+            }
+
+            .btn-whatsapp {
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 
-<body class="mb-5">
+<body>
     <div id="navbar-placeholder"></div>
-    <div id="banner-placeholder"></div>
-    <div class="container mt-5 mb-5">
-        <!-- Primer panel -->
-        <div class="row" data-aos="fade-right">
+
+    <!-- Banner -->
+    <div class="services-banner">
+        <div class="services-banner-content">
+            <h1>Nuestros <span class="highlight">Servicios</span></h1>
+            <p>Soluciones integrales de ingeniería y construcción</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <!-- Servicio 1: Aire Acondicionado -->
+        <div class="row service-row" data-aos="fade-right">
             <div class="col-12 col-md-6 content">
                 <div class="shadow-box"></div>
-                <a href="/views/InstalacionAireAcondicionado.html" style="text-decoration: none; color: inherit;">
-                    <img src="/img/servicios/Servicio-AireAcondicionado.webp" alt="Imagen Servicio-AireAcondicionado"
-                        class="img-fluid">
+                <a href="/views/InstalacionAireAcondicionado.html">
+                    <img src="/img/servicios/Servicio-AireAcondicionado.webp" alt="Instalación de Aire Acondicionado">
                 </a>
             </div>
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                 <a href="/views/InstalacionAireAcondicionado.html" style="text-decoration: none; color: inherit;">
                     <h2 class="text-center">Instalación de Aire Acondicionado</h2>
-                    <p class="text-justify">Garantizamos una instalación rápida y correcta garantizando que el aire
-                        acondicionado funcione de manera eficiente, proporcionando un ambiente cómodo y asegurando la
-                        longevidad del sistema.
-                    </p>
+                    <p>Garantizamos una instalación rápida y correcta garantizando que el aire acondicionado funcione de manera eficiente, proporcionando un ambiente cómodo y asegurando la longevidad del sistema.</p>
                 </a>
                 <div class="d-flex justify-content-center">
                     <a href="https://wa.me/51966622289" target="_blank">
-                        <button class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button>
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Segundo panel -->
-        <div class="row mt-5" data-aos="fade-left">
+        <!-- Servicio 2: Sistemas Eléctricos -->
+        <div class="row service-row reverse" data-aos="fade-left">
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center order-2 order-md-1">
                 <a href="/views/InstalacionSistemaElectrico.html" style="text-decoration: none; color: inherit;">
-                    <h2 class="text-center">Instalacion de sistemas electricos</h2>
-                    <p class="text-justify">Estas instalaciones permiten que la electricidad llegue a los dispositivos y
-                        equipos que la
-                        necesitan, a la vez que garantizan la seguridad de las personas y la protección de los equipos
-                        frente a posibles fallos o riesgos eléctricos.
-                    </p>
+                    <h2 class="text-center">Instalación de Sistemas Eléctricos</h2>
+                    <p>Estas instalaciones permiten que la electricidad llegue a los dispositivos y equipos que la necesitan, a la vez que garantizan la seguridad de las personas y la protección de los equipos frente a posibles fallos o riesgos eléctricos.</p>
                 </a>
                 <div class="d-flex justify-content-center">
-                    <a href="https://wa.me/51966622289" target="_blank"><button
-                            class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button></a>
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
+                    </a>
                 </div>
             </div>
             <div class="col-12 col-md-6 content order-1 order-md-2">
                 <div class="shadow-box" style="left: auto; right: -10px;"></div>
-                <a href="/views/InstalacionSistemaElectrico.html" style="text-decoration: none; color: inherit;">
-                    <img src="/img/servicios/Servicio-SistemasElectricos.webp"
-                        alt="Imagen Servicio-MantenimientoAireAcondicionado" class="img-fluid">
+                <a href="/views/InstalacionSistemaElectrico.html">
+                    <img src="/img/servicios/Servicio-SistemasElectricos.webp" alt="Sistemas Eléctricos">
                 </a>
             </div>
         </div>
 
-        <!-- Tercer panel -->
-        <div class="row mt-5" data-aos="zoom-in">
+        <!-- Servicio 3: Sistemas Contra Incendios -->
+        <div class="row service-row" data-aos="fade-right">
             <div class="col-12 col-md-6 content">
                 <div class="shadow-box"></div>
-                <a href="/views/InstalacionSistemaContraIncendios.html" style="text-decoration: none; color: inherit;"><img
-                        src="/img/servicios/Servicio-SistemasContraIncendios.jpg"
-                        alt="Imagen Servicio-SistemasElectricos" class="img-fluid"></a>
+                <a href="/views/InstalacionSistemaContraIncendios.html">
+                    <img src="/img/servicios/Servicio-SistemasContraIncendios.jpg" alt="Sistemas Contra Incendios">
+                </a>
             </div>
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                 <a href="/views/InstalacionSistemaContraIncendios.html" style="text-decoration: none; color: inherit;">
-                    <h2 class="text-center">Instalacion de Sistemas Contra Incendios</h2>
-                    <p class="text-justify">Se realiza una correcta planificación, selección de equipos adecuados, y
-                        cumplimiento de normativas. Este sistema será capaz de detectar rápidamente cualquier riesgo y
-                        alertar de manera efectiva a las personas dentro del edificio para garantizar su seguridad.</p>
+                    <h2 class="text-center">Instalación de Sistemas Contra Incendios</h2>
+                    <p>Se realiza una correcta planificación, selección de equipos adecuados, y cumplimiento de normativas. Este sistema será capaz de detectar rápidamente cualquier riesgo y alertar de manera efectiva a las personas dentro del edificio para garantizar su seguridad.</p>
                 </a>
                 <div class="d-flex justify-content-center">
-                    <a href="https://wa.me/51966622289" target="_blank"><button
-                            class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button></a>
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Cuarto panel -->
-        <div class="row mt-5" data-aos="fade-left">
+        <!-- Servicio 4: Drywall -->
+        <div class="row service-row reverse" data-aos="fade-left">
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center order-2 order-md-1">
                 <a href="/views/InstalacionDrywall.html" style="text-decoration: none; color: inherit;">
-                    <h2 class="text-center">Instalacion de Drywall</h2>
-                    <p class="text-justify">Es una técnica de construcción que se utiliza para crear superficies de
-                        paredes y techos de manera rápida y eficiente, sin necesidad de aplicar materiales pesados como
-                        el ladrillo o el cemento. Este sistema es ampliamente utilizado tanto en construcciones nuevas
-                        como en remodelaciones debido a su facilidad de instalación, bajo costo y excelentes propiedades
-                        de aislamiento.
-
-                    </p>
+                    <h2 class="text-center">Instalación de Drywall</h2>
+                    <p>Es una técnica de construcción que se utiliza para crear superficies de paredes y techos de manera rápida y eficiente, sin necesidad de aplicar materiales pesados como el ladrillo o el cemento. Este sistema es ampliamente utilizado tanto en construcciones nuevas como en remodelaciones debido a su facilidad de instalación, bajo costo y excelentes propiedades de aislamiento.</p>
                 </a>
                 <div class="d-flex justify-content-center">
-                    <a href="https://wa.me/51966622289" target="_blank"><button
-                            class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button></a>
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
+                    </a>
                 </div>
             </div>
             <div class="col-12 col-md-6 content order-1 order-md-2">
                 <div class="shadow-box" style="left: auto; right: -10px;"></div>
-                <a href="/views/InstalacionDrywall.html" style="text-decoration: none; color: inherit;">
-                    <img src="/img/servicios/Servicio-InstalacionDryWall.jpg"
-                        alt="Imagen Servicio-MantenimientoAireAcondicionado" class="img-fluid">
+                <a href="/views/InstalacionDrywall.html">
+                    <img src="/img/servicios/Servicio-InstalacionDryWall.jpg" alt="Instalación Drywall">
                 </a>
             </div>
         </div>
 
-        <!-- Quinto panel -->
-        <div class="row mt-5" data-aos="zoom-in">
+        <!-- Servicio 5: Entubado de Conduit -->
+        <div class="row service-row" data-aos="fade-right">
             <div class="col-12 col-md-6 content">
                 <div class="shadow-box"></div>
-                <a href="/views/EntubadoConduit.html" style="text-decoration: none; color: inherit;"><img
-                        src="/img/servicios/Servicio-Entubado.jpeg" alt="Imagen Servicio-SistemasElectricos"
-                        class="img-fluid"></a>
+                <a href="/views/EntubadoConduit.html">
+                    <img src="/img/servicios/Servicio-Entubado.jpeg" alt="Entubado de Conduit">
+                </a>
             </div>
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                 <a href="/views/EntubadoConduit.html" style="text-decoration: none; color: inherit;">
-                    <h2 class="text-center">Entubado de Counduit</h2>
-                    <p class="text-justify">Es un sistema utilizado en la instalación de cables eléctricos, en el que se
-                        emplean tubos para proteger y dirigir los cables eléctricos a lo largo de una construcción o
-                        instalación. Este tipo de instalación es común en la construcción de edificios, industrias y
-                        sistemas eléctricos, ya que ofrece seguridad, durabilidad y organización.</p>
+                    <h2 class="text-center">Entubado de Conduit</h2>
+                    <p>Es un sistema utilizado en la instalación de cables eléctricos, en el que se emplean tubos para proteger y dirigir los cables eléctricos a lo largo de una construcción o instalación. Este tipo de instalación es común en la construcción de edificios, industrias y sistemas eléctricos, ya que ofrece seguridad, durabilidad y organización.</p>
                 </a>
                 <div class="d-flex justify-content-center">
-                    <a href="https://wa.me/51966622289" target="_blank"><button
-                            class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button></a>
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
+                    </a>
                 </div>
             </div>
         </div>
 
-
-        <!-- Sexto panel -->
-        <div class="row mt-5" data-aos="fade-left">
+        <!-- Servicio 6: Cámaras de Seguridad -->
+        <div class="row service-row reverse" data-aos="fade-left">
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center order-2 order-md-1">
                 <a href="/views/InstalacionCamarasSeguridad.html" style="text-decoration: none; color: inherit;">
-                    <h2 class="text-center">Instalacion de Camaras de Seguridad</h2>
-                    <p class="text-justify">La instalación de cámaras de seguridad es un proceso clave para mejorar la
-                        seguridad en cualquier tipo de propiedad, ya sea residencial, comercial o industrial. Las
-                        cámaras de seguridad permiten monitorear y grabar lo que sucede en tiempo real, lo que es
-                        fundamental para prevenir delitos, identificar sospechosos y tener evidencia en caso de
-                        incidentes.
-                    </p>
+                    <h2 class="text-center">Instalación de Cámaras de Seguridad</h2>
+                    <p>La instalación de cámaras de seguridad es un proceso clave para mejorar la seguridad en cualquier tipo de propiedad, ya sea residencial, comercial o industrial. Las cámaras de seguridad permiten monitorear y grabar lo que sucede en tiempo real, lo que es fundamental para prevenir delitos, identificar sospechosos y tener evidencia en caso de incidentes.</p>
                 </a>
                 <div class="d-flex justify-content-center">
-                    <a href="https://wa.me/51966622289" target="_blank"><button
-                            class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button></a>
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
+                    </a>
                 </div>
             </div>
             <div class="col-12 col-md-6 content order-1 order-md-2">
                 <div class="shadow-box" style="left: auto; right: -10px;"></div>
-                <a href="/views/InstalacionCamarasSeguridad.html" style="text-decoration: none; color: inherit;">
-                    <img src="/img/servicios/Servicios-Camaras.png"
-                        alt="Imagen Servicio-MantenimientoAireAcondicionado" class="img-fluid">
+                <a href="/views/InstalacionCamarasSeguridad.html">
+                    <img src="/img/servicios/Servicios-Camaras.png" alt="Cámaras de Seguridad">
                 </a>
             </div>
         </div>
 
-        <!-- Septimo panel -->
-        <div class="row mt-5" data-aos="zoom-in">
+        <!-- Servicio 7: Cableado Estructurado -->
+        <div class="row service-row" data-aos="fade-right">
             <div class="col-12 col-md-6 content">
                 <div class="shadow-box"></div>
-                <a href="/views/CableadoEstructurado.html" style="text-decoration: none; color: inherit;"><img
-                        src="/img/servicios/Servicio-Cableado.png" alt="Imagen Servicio-SistemasElectricos"
-                        class="img-fluid"></a>
+                <a href="/views/CableadoEstructurado.html">
+                    <img src="/img/servicios/Servicio-Cableado.png" alt="Cableado Estructurado">
+                </a>
             </div>
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                 <a href="/views/CableadoEstructurado.html" style="text-decoration: none; color: inherit;">
                     <h2 class="text-center">Cableado Estructurado</h2>
-                    <p class="text-justify">Es un sistema estándar de instalación de cables que se utiliza para crear
-                        una infraestructura de red de comunicación eficiente y flexible en edificios u otras
-                        instalaciones.</p>
+                    <p>Es un sistema estándar de instalación de cables que se utiliza para crear una infraestructura de red de comunicación eficiente y flexible en edificios u otras instalaciones.</p>
                 </a>
                 <div class="d-flex justify-content-center">
-                    <a href="https://wa.me/51966622289" target="_blank"><button
-                            class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button></a>
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Octavo panel -->
-        <div class="row mt-5" data-aos="fade-left">
+        <!-- Servicio 8: Pozo a Tierra -->
+        <div class="row service-row reverse" data-aos="fade-left">
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center order-2 order-md-1">
                 <a href="/views/PozoTierra.html" style="text-decoration: none; color: inherit;">
                     <h2 class="text-center">Construcción de Pozo a Tierra</h2>
-                    <p class="text-justify">Un pozo a tierra es una instalación eléctrica utilizada para garantizar la
-                        seguridad de una instalación eléctrica al permitir que las corrientes de fuga o los posibles
-                        fallos de aislamiento se disipen de manera segura hacia el suelo, evitando peligros como
-                        descargas eléctricas o incendios.
-                    </p>
+                    <p>Un pozo a tierra es una instalación eléctrica utilizada para garantizar la seguridad de una instalación eléctrica al permitir que las corrientes de fuga o los posibles fallos de aislamiento se disipen de manera segura hacia el suelo, evitando peligros como descargas eléctricas o incendios.</p>
                 </a>
                 <div class="d-flex justify-content-center">
-                    <a href="https://wa.me/51966622289" target="_blank"><button
-                            class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button></a>
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
+                    </a>
                 </div>
             </div>
             <div class="col-12 col-md-6 content order-1 order-md-2">
                 <div class="shadow-box" style="left: auto; right: -10px;"></div>
-                <a href="/views/PozoTierra.html" style="text-decoration: none; color: inherit;">
-                    <img src="/img/servicios/Servicio-Pozo.jpeg"
-                        alt="Imagen Servicio-MantenimientoAireAcondicionado" class="img-fluid">
+                <a href="/views/PozoTierra.html">
+                    <img src="/img/servicios/Servicio-Pozo.jpeg" alt="Pozo a Tierra">
                 </a>
             </div>
         </div>
 
-        <!-- Noveno panel -->
-        <div class="row mt-5" data-aos="zoom-in">
+        <!-- Servicio 9: Mantenimiento de Ascensores -->
+        <div class="row service-row" data-aos="fade-right">
             <div class="col-12 col-md-6 content">
                 <div class="shadow-box"></div>
-                <a href="/views/MantenimientoAsensores.html" style="text-decoration: none; color: inherit;"><img
-                        src="/img/servicios/Servicio-Ascensor.png" alt="Imagen Servicio-SistemasElectricos"
-                        class="img-fluid"></a>
+                <a href="/views/MantenimientoAsensores.html">
+                    <img src="/img/servicios/Servicio-Ascensor.png" alt="Mantenimiento de Ascensores">
+                </a>
             </div>
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                 <a href="/views/MantenimientoAsensores.html" style="text-decoration: none; color: inherit;">
                     <h2 class="text-center">Mantenimiento de Ascensores</h2>
-                    <p class="text-justify">
-                        Los ascensores son un medio de transporte vertical esencial en edificios de varios pisos, por lo
-                        que es fundamental que se encuentren en óptimas condiciones de funcionamiento y seguridad. Un
-                        mantenimiento adecuado garantiza que los ascensores funcionen de manera eficiente, segura y
-                        duradera, evitando averías, accidentes y garantizando la comodidad de los usuarios.
-                    </p>
+                    <p>Los ascensores son un medio de transporte vertical esencial en edificios de varios pisos, por lo que es fundamental que se encuentren en óptimas condiciones de funcionamiento y seguridad. Un mantenimiento adecuado garantiza que los ascensores funcionen de manera eficiente, segura y duradera, evitando averías, accidentes y garantizando la comodidad de los usuarios.</p>
                 </a>
                 <div class="d-flex justify-content-center">
-                    <a href="https://wa.me/51966622289" target="_blank"><button
-                            class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button></a>
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Décimo panel -->
-        <div class="row mt-5" data-aos="fade-left">
+        <!-- Servicio 10: Acero y Estructuras -->
+        <div class="row service-row reverse" data-aos="fade-left">
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center order-2 order-md-1">
                 <a href="/views/AceroEstructurasFierro.html" style="text-decoration: none; color: inherit;">
                     <h2 class="text-center">Acero y Estructuras de Fierro</h2>
-                    <p class="text-justify">
-                        Las estructuras de acero y fierro son fundamentales en la construcción de edificios, puentes,
-                        entre otros. Estas estructuras ofrecen resistencia, durabilidad y versatilidad
-                        en la construcción, permitiendo la creación de espacios seguros y funcionales.
-                    </p>
+                    <p>Las estructuras de acero y fierro son fundamentales en la construcción de edificios, puentes, entre otros. Estas estructuras ofrecen resistencia, durabilidad y versatilidad en la construcción, permitiendo la creación de espacios seguros y funcionales.</p>
                 </a>
                 <div class="d-flex justify-content-center">
-                    <a href="https://wa.me/51966622289" target="_blank"><button
-                            class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button></a>
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
+                    </a>
                 </div>
             </div>
             <div class="col-12 col-md-6 content order-1 order-md-2">
                 <div class="shadow-box" style="left: auto; right: -10px;"></div>
-                <a href="/views/AceroEstructurasFierro.html" style="text-decoration: none; color: inherit;">
-                    <img src="/img/ImgsCliente/Mantenimiento.jpeg"
-                        alt="Imagen Servicio-MantenimientoAireAcondicionado" class="img-fluid">
+                <a href="/views/AceroEstructurasFierro.html">
+                    <img src="/img/ImgsCliente/Mantenimiento.jpeg" alt="Acero y Estructuras">
                 </a>
             </div>
         </div>
 
-        <!-- Décimo primer panel -->
-        <div class="row mt-5" data-aos="zoom-in">
+        <!-- Servicio 11: Acabados Premium -->
+        <div class="row service-row" data-aos="fade-right">
             <div class="col-12 col-md-6 content">
                 <div class="shadow-box"></div>
-                <a href="/views/GranitoMarmolCuarzo.html" style="text-decoration: none; color: inherit;"><img
-                        src="/img/servicios/Servicio-Acabados.png" alt="Imagen Servicio-SistemasElectricos"
-                        class="img-fluid"></a>
+                <a href="/views/GranitoMarmolCuarzo.html">
+                    <img src="/img/servicios/Servicio-Acabados.png" alt="Acabados Premium">
+                </a>
             </div>
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                 <a href="/views/GranitoMarmolCuarzo.html" style="text-decoration: none; color: inherit;">
-                    <h2 class="text-center">Acabados en Granito, Mármol, Cuarzo, entre otros.</h2>
-                    <p class="text-justify">
-                        Los acabados en granito, mármol, cuarzo y otros materiales son una excelente opción para
-                        embellecer y proteger superficies en interiores y exteriores. Estos materiales ofrecen una
-                        amplia variedad de colores, texturas y acabados, lo que permite crear espacios elegantes y
-                        duraderos.
-                    </p>
+                    <h2 class="text-center">Acabados en Granito, Mármol, Cuarzo</h2>
+                    <p>Los acabados en granito, mármol, cuarzo y otros materiales son una excelente opción para embellecer y proteger superficies en interiores y exteriores. Estos materiales ofrecen una amplia variedad de colores, texturas y acabados, lo que permite crear espacios elegantes y duraderos.</p>
                 </a>
                 <div class="d-flex justify-content-center">
-                    <a href="https://wa.me/51966622289" target="_blank"><button
-                            class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button></a>
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Décimo segundo panel -->
-        <div class="row mt-5" data-aos="fade-left">
+        <!-- Servicio 12: Licencias ITSE -->
+        <div class="row service-row reverse" data-aos="fade-left">
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center order-2 order-md-1">
                 <a href="/views/LicenciaITSE.html" style="text-decoration: none; color: inherit;">
-                    <h2 class="text-center">Licencias de funcionamiento e ITSE</h2>
-                    <p class="text-justify">
-                        La Licencia de Funcionamiento es un permiso municipal esencial para que los establecimientos operen legalmente, certificando el cumplimiento de normativas locales. La ITSE es una inspección obligatoria que asegura el cumplimiento de normas de seguridad y prevención de incendios, crucial para lugares de mayor riesgo como restaurantes y fábricas.
-                    </p>
+                    <h2 class="text-center">Licencias de Funcionamiento e ITSE</h2>
+                    <p>La Licencia de Funcionamiento es un permiso municipal esencial para que los establecimientos operen legalmente, certificando el cumplimiento de normativas locales. La ITSE es una inspección obligatoria que asegura el cumplimiento de normas de seguridad y prevención de incendios, crucial para lugares de mayor riesgo como restaurantes y fábricas.</p>
                 </a>
                 <div class="d-flex justify-content-center">
-                    <a href="https://wa.me/51966622289" target="_blank"><button
-                            class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button></a>
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
+                    </a>
                 </div>
             </div>
             <div class="col-12 col-md-6 content order-1 order-md-2">
                 <div class="shadow-box" style="left: auto; right: -10px;"></div>
-                <a href="/views/LicenciaITSE.html" style="text-decoration: none; color: inherit;">
-                    <img src="/img/servicios/Servicio-LicenciaITSE.png"
-                        alt="Imagen" class="img-fluid">
+                <a href="/views/LicenciaITSE.html">
+                    <img src="/img/servicios/Servicio-LicenciaITSE.png" alt="Licencias ITSE">
                 </a>
             </div>
         </div>
 
-        <!-- Décimo tercer panel -->
-        <div class="row mt-5" data-aos="zoom-in">
+        <!-- Servicio 13: Mantenimientos Generales -->
+        <div class="row service-row" data-aos="fade-right">
             <div class="col-12 col-md-6 content">
                 <div class="shadow-box"></div>
-                <a href="/views/MantenimientoGeneral.html" style="text-decoration: none; color: inherit;"><img
-                        src="/img/servicios/Servicio-MantenimientoGeneral.jpg" alt="Imagen"
-                        class="img-fluid"></a>
+                <a href="/views/MantenimientoGeneral.html">
+                    <img src="/img/servicios/Servicio-MantenimientoGeneral.jpg" alt="Mantenimientos Generales">
+                </a>
             </div>
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                 <a href="/views/MantenimientoGeneral.html" style="text-decoration: none; color: inherit;">
-                    <h2 class="text-center">Mantenimientos generales</h2>
-                    <p class="text-justify">
-                        El mantenimiento en servicios generales incluye actividades programadas y correctivas para asegurar el buen funcionamiento de sistemas, infraestructuras y equipos. Abarca desde la reparación de equipos y limpieza de instalaciones hasta la gestión de climatización, electricidad y fontanería.
-                    </p>
+                    <h2 class="text-center">Mantenimientos Generales</h2>
+                    <p>El mantenimiento en servicios generales incluye actividades programadas y correctivas para asegurar el buen funcionamiento de sistemas, infraestructuras y equipos. Abarca desde la reparación de equipos y limpieza de instalaciones hasta la gestión de climatización, electricidad y fontanería.</p>
                 </a>
                 <div class="d-flex justify-content-center">
-                    <a href="https://wa.me/51966622289" target="_blank"><button
-                            class="btn btn-primary btn-lg btn-whatsapp">Contáctanos
-                            <i class="bi bi-whatsapp"></i>
-                        </button></a>
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-whatsapp">Contáctanos <i class="bi bi-whatsapp"></i></button>
+                    </a>
                 </div>
             </div>
         </div>
 
+        <!-- Sección de llamada a la acción -->
+        <div class="cta-section" data-aos="fade-up">
+            <div class="container">
+                <h2>¿Necesitas un servicio personalizado?</h2>
+                <p>Contáctanos para una consulta gratuita y recibe una cotización adaptada a tus necesidades específicas.</p>
+                <a href="/views/contactanos.html" class="btn btn-cta">
+                    <i class="bi bi-chat-dots-fill"></i> Solicitar cotización
+                </a>
+            </div>
+        </div>
     </div>
 
     <div id="footer-gaaa"></div>
@@ -375,7 +694,11 @@
     <script src="/resources/js/banner.js"></script>
     <script src="/resources/js/footer.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
     </script>
 </body>
 

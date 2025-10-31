@@ -1,25 +1,499 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Quienes Somos</title>
+    <title>Quiénes Somos - NAROC SAC</title>
     <link rel="icon" href="/img/logo/LogoNavBar.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/resources/css/navbar.css">
-    <link rel="stylesheet" href="/resources/css/banner.css">
-    <link rel="stylesheet" href="/css/quienesomos.css">
-    <link rel="stylesheet" href="/resources/css/footer.css">
-    <script src="/js/quienesomos.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --naroc-blue: #0047AB;
+            --naroc-orange: #FF6B35;
+            --naroc-red: #E63946;
+            --naroc-light-blue: #4A90E2;
+            --naroc-dark: #1a1a2e;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-soft: 0 10px 40px rgba(0, 71, 171, 0.12);
+            --shadow-hover: 0 15px 50px rgba(0, 71, 171, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow-x: hidden;
+            color: var(--naroc-dark);
+        }
+
+        /* Banner Section */
+        .banner {
+            position: relative;
+            background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
+            padding: 8rem 0 5rem;
+            margin-bottom: 4rem;
+            overflow: hidden;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
+        }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        .banner-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .banner-text span {
+            font-size: 3.5rem;
+            font-weight: 800;
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+
+        .text-black {
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-orange {
+            color: var(--naroc-orange);
+            text-shadow: 2px 2px 8px rgba(255, 107, 53, 0.3);
+        }
+
+        .banner-subtext {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Container */
+        main.container {
+            max-width: 1200px;
+            padding: 0 2rem 4rem;
+        }
+
+        /* About Section */
+        .about-section {
+            margin-bottom: 6rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(0, 71, 171, 0.1);
+        }
+
+        .about-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
+        }
+
+        .text-overlay h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--naroc-blue);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .text-overlay h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--naroc-orange) 0%, var(--naroc-red) 100%);
+            border-radius: 2px;
+        }
+
+        .text-overlay p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #4a4a4a;
+            font-weight: 500;
+            text-align: justify;
+        }
+
+        .image-with-background {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .background-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            opacity: 0.15;
+            filter: saturate(0.8);
+        }
+
+        .foreground-img {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 71, 171, 0.25);
+            transition: var(--transition);
+            border: 4px solid white;
+        }
+
+        .foreground-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 50px rgba(0, 71, 171, 0.35);
+        }
+
+        /* Misión Vision Section */
+        .mision-vision {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .mision, .vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(0, 71, 171, 0.1);
+            transition: var(--transition);
+            animation: fadeInScale 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .mision:nth-child(1) { animation-delay: 0.1s; }
+        .mision:nth-child(2) { animation-delay: 0.2s; }
+        .mision:nth-child(3) { animation-delay: 0.3s; }
+
+        .mision:hover, .vision:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .mision::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--naroc-blue) 0%, var(--naroc-orange) 100%);
+        }
+
+        .vision::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--naroc-orange) 0%, var(--naroc-red) 100%);
+        }
+
+        .reverse {
+            direction: rtl;
+        }
+
+        .reverse > * {
+            direction: ltr;
+        }
+
+        .image-container {
+            position: relative;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .orange-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            opacity: 0.1;
+        }
+
+        .image-container .foreground-img {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 71, 171, 0.25);
+            transition: var(--transition);
+            border: 4px solid white;
+        }
+
+        .image-container .foreground-img:hover {
+            transform: scale(1.03) rotate(1deg);
+            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.35);
+        }
+
+        .mision .text-overlay,
+        .vision .text-overlay {
+            padding: 1rem;
+        }
+
+        .header-image {
+            max-width: 250px;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 71, 171, 0.2));
+        }
+
+        .text-overlay p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #4a4a4a;
+            font-weight: 500;
+            text-align: justify;
+        }
+
+        .text-overlay ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1.5rem;
+        }
+
+        .text-overlay ul li {
+            font-size: 1.05rem;
+            line-height: 2;
+            color: #4a4a4a;
+            font-weight: 600;
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .text-overlay ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: white;
+            background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(0, 71, 171, 0.3);
+        }
+
+        .text-overlay ul li:hover {
+            color: var(--naroc-blue);
+            transform: translateX(5px);
+        }
+
+        .text-overlay ul li:hover::before {
+            background: linear-gradient(135deg, var(--naroc-orange) 0%, var(--naroc-red) 100%);
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 991.98px) {
+            .banner-text span {
+                font-size: 2.5rem;
+            }
+
+            .banner-subtext {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .mision,
+            .vision {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+            .text-overlay h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .text-overlay h1::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .image-with-background,
+            .image-container {
+                height: 300px;
+            }
+
+            .header-image {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            main.container {
+                padding: 0 1rem 3rem;
+            }
+
+            .banner {
+                padding: 6rem 0 4rem;
+            }
+
+            .banner-text span {
+                font-size: 2rem;
+                display: block;
+                margin: 0.3rem 0;
+            }
+
+            .banner-subtext {
+                font-size: 1rem;
+            }
+
+            .about-section {
+                margin-bottom: 4rem;
+            }
+
+            .mision-vision {
+                gap: 2.5rem;
+            }
+
+            .text-overlay p {
+                font-size: 1rem;
+            }
+
+            .text-overlay ul li {
+                font-size: 1rem;
+            }
+        }
+
+        /* Animación de scroll */
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scroll-animation.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 <body>
     <div id="navbar-placeholder"></div>
+    
     <div class="banner">
         <div class="banner-text">
             <span class="text-black">¿Quiénes</span>
@@ -27,9 +501,9 @@
             <div class="banner-subtext">Acerca de nuestra empresa</div>
         </div>
     </div>
+
     <main class="container">
-        <section class="about-section">
-            <h2 class="heading"></h2>
+        <section class="about-section scroll-animation">
             <div class="about-content">
                 <div class="text-overlay">
                     <h1>Sobre Nosotros</h1>
@@ -49,7 +523,7 @@
         </section>
 
         <section class="mision-vision">
-            <div class="mision">
+            <div class="mision scroll-animation">
                 <div class="image-container">
                     <img src="/img/quienesomos/Rectangle 49.png" alt="Cuadro Naranja" class="orange-img">
                     <img src="/img/quienesomos/Rectangle 5.png" alt="Imagen Misión" class="foreground-img">
@@ -65,35 +539,37 @@
                     </p>
                 </div>
             </div>
-            <div class="vision reverse">
+
+            <div class="vision reverse scroll-animation">
                 <div class="image-container">
                     <img src="/img/quienesomos/Rectangle 47.png" alt="Cuadro Naranja" class="orange-img">
                     <img src="/img/quienesomos/Rectangle 6.png" alt="Imagen Visión" class="foreground-img">
                 </div>
                 <div class="text-overlay">
-                    <img src="/img/quienesomos/Group 29.png" alt="Encabezado Misión" class="header-image">
+                    <img src="/img/quienesomos/Group 29.png" alt="Encabezado Visión" class="header-image">
                     <p>
-                        Lograr ser líderes en el rubro ofreciendo nuestra calidad de trabajo,las soluciones inmediatas
+                        Lograr ser líderes en el rubro ofreciendo nuestra calidad de trabajo, las soluciones inmediatas
                         ante emergencias que puedan suscitarse, ideas sostenibles e innovadoras y sobre todo nuestra
                         atención personalizada a los clientes que son la prioridad de nuestra empresa.
                     </p>
                 </div>
             </div>
-            <div class="mision">
+
+            <div class="mision scroll-animation">
                 <div class="image-container">
                     <img src="/img/quienesomos/Rectangle 49.png" alt="Cuadro Naranja" class="orange-img">
                     <img src="/img/quienesomos/valoresempresa.jpg" alt="Imagen Valores" class="foreground-img">
                 </div>
                 <div class="text-overlay">
-                    <img src="/img/quienesomos/Group 31.png" alt="Encabezado Misión" class="header-image">
+                    <img src="/img/quienesomos/Group 31.png" alt="Encabezado Valores" class="header-image">
                     <p>
                         En Naroc, nos guiamos por los siguientes valores fundamentales que definen nuestra cultura y forma de trabajo:
                     </p>
-                    <ul style="text-align: left;">
+                    <ul>
                         <li>Calidad</li>
                         <li>Honestidad</li>
                         <li>Lealtad</li>
-                        <li>Innovacion</li>
+                        <li>Innovación</li>
                         <li>Integridad</li>
                         <li>Trabajo en equipo</li>
                         <li>Seguridad, Salud ocupacional y Medio ambiente</li>
@@ -110,11 +586,46 @@
     </main>
 
     <div id="footer-gaaa"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="/resources/js/navbar.js"></script>
     <script src="/resources/js/footer.js"></script>
+    
+    <script>
+        // Animación al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animation').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
