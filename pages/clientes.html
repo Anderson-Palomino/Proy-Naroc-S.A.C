@@ -21,16 +21,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
 
     <style>
-        .clientes-page {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .clientes-main {
-            flex: 1;
-        }
-
         /* Hero Section */
         .clientes-hero {
             position: relative;
@@ -279,17 +269,27 @@
                 padding: 0 1rem;
             }
         }
+
+        @media (max-width: 375px) {
+            .clientes-hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .clientes-feature h2 {
+                font-size: 1.1rem;
+            }
+
+            .swiper-slide img {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="clientes-page">
-        <header>
-            <nav id="navbar-placeholder" aria-label="Navegación principal"></nav>
-        </header>
+    <div id="navbar-placeholder"></div>
 
-        <main class="clientes-main">
-            <!-- Hero Section -->
+    <!-- Hero Section -->
             <section class="clientes-hero" aria-label="Sección principal">
                 <div class="clientes-hero-content">
                     <div class="clientes-overlay">
@@ -358,18 +358,16 @@
                     </div>
                 </div>
             </section>
-        </main>
 
-        <footer id="footer-gaaa" aria-label="Pie de página"></footer>
-    </div>
+    <div id="footer-gaaa"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="/assets/js/components/navbar.js" defer></script>
-    <script src="/assets/js/components/footer.js" defer></script>
+    <script src="/assets/js/components/navbar.js"></script>
+    <script src="/assets/js/components/footer.js"></script>
 
     <script>
         AOS.init({

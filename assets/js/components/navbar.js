@@ -21,16 +21,11 @@ function initNavbar() {
         }
     });
 
-    // Close menu on link click (mobile)
-    document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-        link.addEventListener('click', () => {
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-                bsCollapse.hide();
-            }
-        });
-    });
+    // Initialize Bootstrap dropdown for dynamically loaded content
+    const dropdownEl = document.querySelector('[data-bs-toggle="dropdown"]');
+    if (dropdownEl) {
+        new bootstrap.Dropdown(dropdownEl);
+    }
 
     // Set active state based on current URL
     const path = window.location.pathname;
