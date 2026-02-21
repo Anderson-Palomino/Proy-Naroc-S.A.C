@@ -14,63 +14,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/global.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <style>
-        body {
-            padding-top: 0;
-        }
-
         /* Banner Section */
         .banner {
             position: relative;
             background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
-            padding: 8rem 0 5rem;
+            padding: 6rem 0 4rem;
             margin-bottom: 4rem;
-            overflow: hidden;
-        }
-
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
-        }
-
-        .banner::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 0.8;
-            }
         }
 
         .banner-text {
             position: relative;
             z-index: 2;
             text-align: center;
-            animation: fadeInDown 0.8s ease;
         }
 
         .banner-text span {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
             display: inline-block;
             margin: 0 0.5rem;
@@ -78,31 +40,18 @@
 
         .text-black {
             color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .text-orange {
             color: var(--naroc-orange);
-            text-shadow: 2px 2px 8px rgba(255, 107, 53, 0.3);
         }
 
         .banner-subtext {
             color: rgba(255, 255, 255, 0.95);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 500;
             margin-top: 1rem;
             letter-spacing: 1px;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Main Container */
@@ -113,37 +62,24 @@
 
         /* About Section */
         .about-section {
-            margin-bottom: 6rem;
-            animation: fadeInUp 0.8s ease;
+            margin-bottom: 5rem;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
             background: white;
-            padding: 3rem;
-            border-radius: 25px;
-            box-shadow: var(--shadow-soft);
-            position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(0, 71, 171, 0.1);
-        }
-
-        .about-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            border: var(--border-subtle);
         }
 
         .text-overlay h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--naroc-blue);
             margin-bottom: 1.5rem;
             position: relative;
@@ -155,15 +91,15 @@
             position: absolute;
             bottom: -10px;
             left: 0;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--naroc-orange) 0%, var(--naroc-red) 100%);
+            width: 48px;
+            height: 3px;
+            background: var(--naroc-orange);
             border-radius: 2px;
         }
 
         .text-overlay p {
-            font-size: 1.1rem;
-            line-height: 1.9;
+            font-size: 1.05rem;
+            line-height: 1.8;
             color: #4a4a4a;
             font-weight: 500;
             text-align: justify;
@@ -182,7 +118,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             opacity: 0.15;
             filter: saturate(0.8);
         }
@@ -193,68 +129,34 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 71, 171, 0.25);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
             transition: var(--transition);
-            border: 4px solid white;
-        }
-
-        .foreground-img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 20px 50px rgba(0, 71, 171, 0.35);
         }
 
         /* Misión Vision Section */
         .mision-vision {
             display: flex;
             flex-direction: column;
-            gap: 4rem;
+            gap: 3rem;
         }
 
         .mision, .vision {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 2.5rem;
             align-items: center;
             background: white;
-            padding: 3rem;
-            border-radius: 25px;
-            box-shadow: var(--shadow-soft);
-            position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(0, 71, 171, 0.1);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            border: var(--border-subtle);
             transition: var(--transition);
-            animation: fadeInScale 0.6s ease forwards;
-            opacity: 0;
         }
-
-        .mision:nth-child(1) { animation-delay: 0.1s; }
-        .mision:nth-child(2) { animation-delay: 0.2s; }
-        .mision:nth-child(3) { animation-delay: 0.3s; }
 
         .mision:hover, .vision:hover {
             box-shadow: var(--shadow-hover);
-            transform: translateY(-5px);
-        }
-
-        .mision::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--naroc-blue) 0%, var(--naroc-orange) 100%);
-        }
-
-        .vision::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--naroc-orange) 0%, var(--naroc-red) 100%);
+            transform: translateY(-2px);
         }
 
         .reverse {
@@ -278,7 +180,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             opacity: 0.1;
         }
 
@@ -288,15 +190,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 71, 171, 0.25);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
             transition: var(--transition);
-            border: 4px solid white;
-        }
-
-        .image-container .foreground-img:hover {
-            transform: scale(1.03) rotate(1deg);
-            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.35);
         }
 
         .mision .text-overlay,
@@ -307,15 +203,6 @@
         .header-image {
             max-width: 250px;
             margin-bottom: 1.5rem;
-            filter: drop-shadow(0 4px 8px rgba(0, 71, 171, 0.2));
-        }
-
-        .text-overlay p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: #4a4a4a;
-            font-weight: 500;
-            text-align: justify;
         }
 
         .text-overlay ul {
@@ -331,45 +218,33 @@
             font-weight: 600;
             padding-left: 2rem;
             position: relative;
-            margin-bottom: 0.8rem;
-            transition: var(--transition);
+            margin-bottom: 0.5rem;
         }
 
         .text-overlay ul li::before {
-            content: '✓';
+            content: '\2713';
             position: absolute;
             left: 0;
             color: white;
-            background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
-            width: 28px;
-            height: 28px;
+            background: var(--naroc-blue);
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 3px 10px rgba(0, 71, 171, 0.3);
-        }
-
-        .text-overlay ul li:hover {
-            color: var(--naroc-blue);
-            transform: translateX(5px);
-        }
-
-        .text-overlay ul li:hover::before {
-            background: linear-gradient(135deg, var(--naroc-orange) 0%, var(--naroc-red) 100%);
-            transform: scale(1.1);
+            font-size: 0.8rem;
         }
 
         /* Responsive */
         @media (max-width: 991.98px) {
             .banner-text span {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
             .banner-subtext {
-                font-size: 1.1rem;
+                font-size: 1.05rem;
             }
 
             .about-content,
@@ -381,7 +256,7 @@
             }
 
             .text-overlay h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
                 text-align: center;
             }
 
@@ -408,11 +283,11 @@
             }
 
             .banner {
-                padding: 6rem 0 4rem;
+                padding: 5rem 0 3rem;
             }
 
             .banner-text span {
-                font-size: 2rem;
+                font-size: 1.8rem;
                 display: block;
                 margin: 0.3rem 0;
             }
@@ -422,11 +297,11 @@
             }
 
             .about-section {
-                margin-bottom: 4rem;
+                margin-bottom: 3rem;
             }
 
             .mision-vision {
-                gap: 2.5rem;
+                gap: 2rem;
             }
 
             .text-overlay p {
@@ -437,24 +312,12 @@
                 font-size: 1rem;
             }
         }
-
-        /* Animación de scroll */
-        .scroll-animation {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .scroll-animation.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 
 <body>
     <div id="navbar-placeholder"></div>
-    
+
     <div class="banner">
         <div class="banner-text">
             <span class="text-black">¿Quiénes</span>
@@ -464,7 +327,7 @@
     </div>
 
     <main class="container">
-        <section class="about-section scroll-animation">
+        <section class="about-section" data-aos="fade-up">
             <div class="about-content">
                 <div class="text-overlay">
                     <h1>Sobre Nosotros</h1>
@@ -484,7 +347,7 @@
         </section>
 
         <section class="mision-vision">
-            <div class="mision scroll-animation">
+            <div class="mision" data-aos="fade-up">
                 <div class="image-container">
                     <img src="/assets/img/quienes-somos/Rectangle 49.png" alt="Cuadro Naranja" class="orange-img" loading="lazy">
                     <img src="/assets/img/quienes-somos/Rectangle 5.png" alt="Imagen Misión" class="foreground-img" loading="lazy">
@@ -501,7 +364,7 @@
                 </div>
             </div>
 
-            <div class="vision reverse scroll-animation">
+            <div class="vision reverse" data-aos="fade-up">
                 <div class="image-container">
                     <img src="/assets/img/quienes-somos/Rectangle 47.png" alt="Cuadro Naranja" class="orange-img" loading="lazy">
                     <img src="/assets/img/quienes-somos/Rectangle 6.png" alt="Imagen Visión" class="foreground-img" loading="lazy">
@@ -516,7 +379,7 @@
                 </div>
             </div>
 
-            <div class="mision scroll-animation">
+            <div class="mision" data-aos="fade-up">
                 <div class="image-container">
                     <img src="/assets/img/quienes-somos/Rectangle 49.png" alt="Cuadro Naranja" class="orange-img" loading="lazy">
                     <img src="/assets/img/quienes-somos/valoresempresa.jpg" alt="Imagen Valores" class="foreground-img" loading="lazy">
@@ -551,40 +414,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="/assets/js/components/navbar.js"></script>
     <script src="/assets/js/components/footer.js"></script>
-    
     <script>
-        // Animación al hacer scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-animation').forEach((el) => {
-            observer.observe(el);
-        });
-
-        // Smooth scroll para enlaces internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        AOS.init({
+            duration: 500,
+            once: true,
+            offset: 80,
+            disable: 'mobile'
         });
     </script>
 </body>

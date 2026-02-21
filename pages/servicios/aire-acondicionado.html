@@ -22,9 +22,8 @@
         .service-hero {
             position: relative;
             background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
-            padding: 6rem 0 4rem;
+            padding: 5rem 0 3rem;
             margin-bottom: 3rem;
-            overflow: hidden;
         }
 
         .service-hero::before {
@@ -48,7 +47,6 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .service-hero h1 .highlight {
@@ -64,7 +62,7 @@
         /* Content Section */
         .content-section {
             background: var(--light-bg);
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             padding: 3rem;
             margin-bottom: 3rem;
             box-shadow: var(--shadow-soft);
@@ -75,7 +73,7 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             box-shadow: var(--shadow-soft);
             transition: var(--transition);
         }
@@ -103,36 +101,20 @@
 
         .feature-card {
             background: linear-gradient(135deg, var(--light-bg) 0%, #f8f9fa 100%);
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             padding: 2rem;
             text-align: center;
             box-shadow: var(--shadow-soft);
-            border: 2px solid transparent;
+            border: var(--border-subtle);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 100%);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
             border-color: var(--naroc-orange);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
         }
 
         .feature-icon {
@@ -164,7 +146,7 @@
             background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
             border: none;
             padding: 1rem 2.5rem;
-            border-radius: 50px;
+            border-radius: var(--radius-md);
             font-weight: 700;
             font-size: 1.1rem;
             color: white;
@@ -179,8 +161,8 @@
 
         .btn-whatsapp:hover {
             background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-soft);
             color: white;
         }
 
@@ -189,17 +171,13 @@
             transition: var(--transition);
         }
 
-        .btn-whatsapp:hover i {
-            transform: scale(1.2) rotate(5deg);
-        }
-
         /* Benefits Section */
         .benefits-section {
             background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 3rem 0;
             margin: 4rem 0;
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             position: relative;
             overflow: hidden;
         }
@@ -215,8 +193,8 @@
         }
 
         .benefits-title {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2rem;
+            font-weight: 700;
             text-align: center;
             margin-bottom: 3rem;
             color: white;
@@ -336,17 +314,17 @@
                     <h5>Instalación Rápida y Profesional</h5>
                     <p>Realizamos instalaciones eficientes con los más altos estándares de calidad y profesionalismo.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-shield-check feature-icon"></i>
                     <h5>Garantía en los Equipos</h5>
                     <p>Todos nuestros equipos cuentan con garantía extendida y soporte técnico especializado.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-tools feature-icon"></i>
                     <h5>Mantenimiento Preventivo</h5>
                     <p>Mantenimientos correctivos de frecuencia trimestral para garantizar el óptimo funcionamiento.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-award feature-icon"></i>
                     <h5>Cumplimiento de Normativas</h5>
                     <p>Garantizamos el cumplimiento con todas las normas de seguridad y calidad vigentes.</p>
@@ -364,12 +342,12 @@
                         <h4>Climatización Óptima</h4>
                         <p>Temperatura perfecta en cualquier época del año para mayor confort y productividad.</p>
                     </div>
-                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-graph-up-arrow benefit-icon"></i>
                         <h4>Eficiencia Energética</h4>
                         <p>Equipos de última generación que optimizan el consumo energético y reducen costos.</p>
                     </div>
-                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-headset benefit-icon"></i>
                         <h4>Soporte Continuo</h4>
                         <p>Asesoramiento técnico permanente y respuesta rápida ante cualquier inconveniente.</p>
@@ -398,9 +376,10 @@
     <script src="/assets/js/components/footer.js"></script>
     <script>
         AOS.init({
-            duration: 800,
+            duration: 500,
             once: true,
-            offset: 100
+            offset: 100,
+            disable: 'mobile'
         });
     </script>
 </body>

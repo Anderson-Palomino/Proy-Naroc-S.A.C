@@ -22,9 +22,8 @@
         .service-hero {
             position: relative;
             background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
-            padding: 6rem 0 4rem;
+            padding: 5rem 0 3rem;
             margin-bottom: 3rem;
-            overflow: hidden;
         }
 
         .service-hero::before {
@@ -48,7 +47,6 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .service-hero h1 .highlight {
@@ -64,7 +62,7 @@
         /* Content Section */
         .content-section {
             background: var(--light-bg);
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             padding: 3rem;
             margin-bottom: 3rem;
             box-shadow: var(--shadow-soft);
@@ -75,7 +73,7 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             box-shadow: var(--shadow-soft);
             transition: var(--transition);
         }
@@ -103,36 +101,20 @@
 
         .feature-card {
             background: linear-gradient(135deg, var(--light-bg) 0%, #f8f9fa 100%);
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             padding: 2rem;
             box-shadow: var(--shadow-soft);
-            border: 2px solid transparent;
+            border: var(--border-subtle);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
             height: 100%;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 100%);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
             border-color: var(--naroc-orange);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
         }
 
         .feature-icon {
@@ -179,9 +161,9 @@
         .benefits-section {
             background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 3rem 0;
             margin: 4rem 0;
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             position: relative;
             overflow: hidden;
         }
@@ -197,8 +179,8 @@
         }
 
         .benefits-title {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2rem;
+            font-weight: 700;
             text-align: center;
             margin-bottom: 3rem;
             color: white;
@@ -229,7 +211,7 @@
         /* Applications Section */
         .applications-section {
             background: var(--light-bg);
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             padding: 3rem;
             margin-bottom: 3rem;
             box-shadow: var(--shadow-soft);
@@ -238,7 +220,7 @@
 
         .application-card {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             padding: 2rem;
             text-align: center;
             border: 2px solid transparent;
@@ -262,7 +244,7 @@
             background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
             border: none;
             padding: 1rem 2.5rem;
-            border-radius: 50px;
+            border-radius: var(--radius-md);
             font-weight: 700;
             font-size: 1.1rem;
             color: white;
@@ -277,8 +259,8 @@
 
         .btn-whatsapp:hover {
             background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-soft);
             color: white;
         }
 
@@ -287,12 +269,8 @@
             transition: var(--transition);
         }
 
-        .btn-whatsapp:hover i {
-            transform: scale(1.2) rotate(5deg);
-        }
-        
         .service-carousel {
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow-soft);
         }
@@ -433,7 +411,7 @@
                         <li><strong>Tratamientos Superficiales:</strong> Aplicación de protección anticorrosiva y pintura industrial</li>
                     </ul>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="250">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-award feature-icon"></i>
                     <h5>Ventajas de las Estructuras de Acero</h5>
                     <ul class="feature-list">
@@ -459,14 +437,14 @@
                         <p>Estructuras para centros comerciales, oficinas y edificios corporativos de múltiples pisos.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="application-card">
                         <i class="bi bi-gear application-icon"></i>
                         <h5>Estructuras Industriales</h5>
                         <p>Naves industriales, almacenes, plantas de producción y estructuras para maquinaria pesada.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="application-card">
                         <i class="bi bi-bridge application-icon"></i>
                         <h5>Infraestructura Pública</h5>
@@ -486,12 +464,12 @@
                         <h4>Certificación de Calidad</h4>
                         <p>Todos nuestros materiales y procesos cumplen con los más altos estándares internacionales de calidad y seguridad.</p>
                     </div>
-                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-clock benefit-icon"></i>
                         <h4>Entrega Puntual</h4>
                         <p>Compromiso con los plazos establecidos mediante una planificación rigurosa y gestión eficiente.</p>
                     </div>
-                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-graph-up-arrow benefit-icon"></i>
                         <h4>Optimización de Costos</h4>
                         <p>Soluciones eficientes que maximizan el rendimiento de la inversión sin comprometer la calidad.</p>
@@ -520,9 +498,10 @@
     <script src="/assets/js/components/footer.js"></script>
     <script>
         AOS.init({
-            duration: 800,
+            duration: 500,
             once: true,
-            offset: 100
+            offset: 100,
+            disable: 'mobile'
         });
     </script>
 </body>

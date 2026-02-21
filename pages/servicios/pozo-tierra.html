@@ -22,9 +22,8 @@
         .service-hero {
             position: relative;
             background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
-            padding: 6rem 0 4rem;
+            padding: 5rem 0 3rem;
             margin-bottom: 3rem;
-            overflow: hidden;
         }
 
         .service-hero::before {
@@ -48,7 +47,6 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .service-hero h1 .highlight {
@@ -64,7 +62,7 @@
         /* Content Section */
         .content-section {
             background: var(--light-bg);
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             padding: 3rem;
             margin-bottom: 3rem;
             box-shadow: var(--shadow-soft);
@@ -75,7 +73,7 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             box-shadow: var(--shadow-soft);
             transition: var(--transition);
         }
@@ -103,36 +101,20 @@
 
         .feature-card {
             background: linear-gradient(135deg, var(--light-bg) 0%, #f8f9fa 100%);
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             padding: 2rem;
             box-shadow: var(--shadow-soft);
-            border: 2px solid transparent;
+            border: var(--border-subtle);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
             height: 100%;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 100%);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
             border-color: var(--naroc-orange);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
         }
 
         .feature-icon {
@@ -164,9 +146,9 @@
         .benefits-section {
             background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 3rem 0;
             margin: 4rem 0;
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             position: relative;
             overflow: hidden;
         }
@@ -182,8 +164,8 @@
         }
 
         .benefits-title {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2rem;
+            font-weight: 700;
             text-align: center;
             margin-bottom: 3rem;
             color: white;
@@ -214,7 +196,7 @@
         /* Materials Section */
         .materials-section {
             background: var(--light-bg);
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             padding: 3rem;
             margin-bottom: 3rem;
             box-shadow: var(--shadow-soft);
@@ -223,7 +205,7 @@
 
         .material-card {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             padding: 2rem;
             text-align: center;
             border: 2px solid transparent;
@@ -247,7 +229,7 @@
             background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
             border: none;
             padding: 1rem 2.5rem;
-            border-radius: 50px;
+            border-radius: var(--radius-md);
             font-weight: 700;
             font-size: 1.1rem;
             color: white;
@@ -262,8 +244,8 @@
 
         .btn-whatsapp:hover {
             background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-soft);
             color: white;
         }
 
@@ -272,12 +254,8 @@
             transition: var(--transition);
         }
 
-        .btn-whatsapp:hover i {
-            transform: scale(1.2) rotate(5deg);
-        }
-
         .service-carousel {
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow-soft);
         }
@@ -412,17 +390,17 @@
                     <h5>Diseño y Planificación</h5>
                     <p>Análisis técnico del terreno y diseño personalizado según las características del suelo y los requerimientos específicos de la instalación eléctrica.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="250">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-speedometer2 feature-icon"></i>
                     <h5>Verificación de la Resistencia</h5>
                     <p>Medición precisa de la resistencia del terreno para garantizar valores óptimos de disipación según normativas internacionales.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-tools feature-icon"></i>
                     <h5>Materiales de Calidad</h5>
                     <p>Utilizamos varillas copperweld, mallas de cobre y productos certificados que garantizan durabilidad y máxima conductividad.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="350">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-gear feature-icon"></i>
                     <h5>Proceso de Construcción</h5>
                     <p>Ejecución técnica especializada que incluye perforación, instalación de electrodos, relleno con tierra tratada y compactación.</p>
@@ -441,14 +419,14 @@
                         <p>Electrodos de alta conductividad con núcleo de acero y recubrimiento de cobre para máxima durabilidad.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="material-card">
                         <i class="bi bi-grid-3x3 material-icon"></i>
                         <h5>Mallas de Cobre</h5>
                         <p>Sistemas de puesta a tierra con mallas conductivas para áreas de alta densidad eléctrica.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="material-card">
                         <i class="bi bi-droplet material-icon"></i>
                         <h5>Tierra Tratada</h5>
@@ -468,12 +446,12 @@
                         <h4>Protección Humana</h4>
                         <p>Evita descargas eléctricas y protege la integridad de las personas ante fallos del sistema.</p>
                     </div>
-                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-cpu benefit-icon"></i>
                         <h4>Protección de Equipos</h4>
                         <p>Salvaguarda equipos electrónicos sensibles contra sobretensiones y descargas atmosféricas.</p>
                     </div>
-                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-file-earmark-check benefit-icon"></i>
                         <h4>Cumplimiento Normativo</h4>
                         <p>Garantiza el cumplimiento de todas las normativas de seguridad eléctrica vigentes.</p>
@@ -502,9 +480,10 @@
     <script src="/assets/js/components/footer.js"></script>
     <script>
         AOS.init({
-            duration: 800,
+            duration: 500,
             once: true,
-            offset: 100
+            offset: 100,
+            disable: 'mobile'
         });
     </script>
 </body>

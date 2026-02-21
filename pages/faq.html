@@ -14,70 +14,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/global.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <style>
-        body {
-            padding-top: 0;
-        }
-
         /* Banner Section */
         .banner {
             position: relative;
             width: 100%;
-            height: 400px;
-            overflow: hidden;
+            min-height: 300px;
             margin-bottom: 4rem;
             background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
-        }
-
-        .banner-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 8s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
-        }
-
-        .overlay-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(248, 249, 250, 0.7) 100%);
-            backdrop-filter: blur(3px);
+            padding: 4rem 2rem;
         }
 
         .banner-text {
             position: relative;
             z-index: 2;
             max-width: 900px;
-            color: var(--naroc-dark);
         }
 
         .banner-text h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
-            animation: fadeInUp 1s ease;
+            color: white;
         }
 
         .banner-text .quienes {
-            color: var(--naroc-blue);
+            color: white;
         }
 
         .banner-text .somos {
@@ -85,11 +61,9 @@
         }
 
         .banner-text h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 500;
-            color: var(--naroc-dark);
-            animation: fadeInUp 1s ease 0.2s forwards;
-            opacity: 0;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         /* FAQ Section */
@@ -100,28 +74,26 @@
 
         /* Accordion Styles */
         .accordion-item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             border: none;
-            border-radius: 15px;
+            border-radius: var(--radius-md);
             overflow: hidden;
-            box-shadow: var(--shadow-soft);
+            box-shadow: var(--shadow-card);
             transition: var(--transition);
         }
 
         .accordion-item:hover {
-            box-shadow: var(--shadow-hover);
-            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
         }
 
         .accordion-button {
             background: white;
             color: var(--naroc-blue);
             font-weight: 700;
-            font-size: 1.1rem;
-            padding: 1.5rem 2rem;
+            font-size: 1.05rem;
+            padding: 1.25rem 1.5rem;
             border: none;
             transition: var(--transition);
-            position: relative;
         }
 
         .accordion-button:not(.collapsed) {
@@ -146,11 +118,11 @@
 
         .accordion-button span {
             display: inline-block;
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             background: var(--naroc-orange);
             border-radius: 50%;
-            margin-right: 15px;
+            margin-right: 12px;
             transition: var(--transition);
         }
 
@@ -159,12 +131,12 @@
         }
 
         .accordion-body {
-            padding: 2rem;
+            padding: 1.5rem;
             background: white;
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.7;
             color: var(--naroc-dark);
-            border-top: 1px solid rgba(0, 71, 171, 0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .accordion-body p {
@@ -173,81 +145,63 @@
 
         /* WhatsApp Button */
         .btn-whatsapp {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            background: #25d366;
             color: white;
             border: none;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
+            padding: 0.9rem 2rem;
+            border-radius: var(--radius-md);
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-top: 3rem;
             margin-bottom: 2rem;
             transition: var(--transition);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
         .btn-whatsapp:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-soft);
             color: white;
+            background: #128C7E;
         }
-
-        /* Animations */
-        .accordion-item {
-            opacity: 0;
-            animation: fadeInScale 0.6s ease forwards;
-        }
-
-        /* Animation delays for accordion items */
-        .accordion-item:nth-child(1) { animation-delay: 0.1s; }
-        .accordion-item:nth-child(2) { animation-delay: 0.2s; }
-        .accordion-item:nth-child(3) { animation-delay: 0.3s; }
-        .accordion-item:nth-child(4) { animation-delay: 0.4s; }
-        .accordion-item:nth-child(5) { animation-delay: 0.5s; }
-        .accordion-item:nth-child(6) { animation-delay: 0.6s; }
-        .accordion-item:nth-child(7) { animation-delay: 0.7s; }
-        .accordion-item:nth-child(8) { animation-delay: 0.8s; }
-        .accordion-item:nth-child(9) { animation-delay: 0.9s; }
-        .accordion-item:nth-child(10) { animation-delay: 1.0s; }
 
         /* Responsive */
         @media (max-width: 991.98px) {
             .banner {
-                height: 350px;
+                min-height: 260px;
             }
 
             .banner-text h1 {
-                font-size: 2.8rem;
-            }
-
-            .banner-text h2 {
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            .banner {
-                height: 300px;
-            }
-
-            .banner-text h1 {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
             }
 
             .banner-text h2 {
                 font-size: 1.1rem;
             }
+        }
 
-            .accordion-button {
-                padding: 1.2rem 1.5rem;
+        @media (max-width: 767.98px) {
+            .banner {
+                min-height: 220px;
+            }
+
+            .banner-text h1 {
+                font-size: 2rem;
+            }
+
+            .banner-text h2 {
                 font-size: 1rem;
             }
 
+            .accordion-button {
+                padding: 1rem 1.2rem;
+                font-size: 0.95rem;
+            }
+
             .accordion-body {
-                padding: 1.5rem;
+                padding: 1.2rem;
             }
         }
     </style>
@@ -260,7 +214,6 @@
         <!-- Banner Section -->
         <div class="banner">
             <div class="overlay">
-                <div class="overlay-bg"></div>
                 <div class="banner-text">
                     <h1><span class="quienes">Preguntas</span> <span class="somos">Frecuentes</span></h1>
                     <h2 class="subtext">Resolvemos tus dudas sobre sus preguntas más generales</h2>
@@ -271,10 +224,10 @@
         <!-- FAQ Section -->
         <div class="section" id="faq">
             <div class="container">
-                <h2 class="section-heading">Preguntas Frecuentes</h2>
+                <h2 class="section-heading" data-aos="fade-up">Preguntas Frecuentes</h2>
                 <div class="row">
                     <!-- Primera columna -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-up">
                         <div class="accordion accordion-flush" id="accordionFlushLeft">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
@@ -430,7 +383,7 @@
                     </div>
 
                     <!-- Segunda columna -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="accordion accordion-flush" id="accordionFlushRight">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
@@ -601,8 +554,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="/assets/js/components/navbar.js"></script>
     <script src="/assets/js/components/footer.js"></script>
+    <script>
+        AOS.init({
+            duration: 500,
+            once: true,
+            offset: 80,
+            disable: 'mobile'
+        });
+    </script>
 </body>
 
 </html>

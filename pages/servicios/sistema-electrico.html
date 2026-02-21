@@ -22,9 +22,8 @@
         .service-hero {
             position: relative;
             background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
-            padding: 6rem 0 4rem;
+            padding: 5rem 0 3rem;
             margin-bottom: 3rem;
-            overflow: hidden;
         }
 
         .service-hero::before {
@@ -48,7 +47,6 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .service-hero h1 .highlight {
@@ -64,7 +62,7 @@
         /* Content Section */
         .content-section {
             background: var(--light-bg);
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             padding: 3rem;
             margin-bottom: 3rem;
             box-shadow: var(--shadow-soft);
@@ -73,7 +71,7 @@
 
         /* Carousel Styles */
         .service-carousel {
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow-soft);
         }
@@ -119,36 +117,20 @@
 
         .feature-card {
             background: linear-gradient(135deg, var(--light-bg) 0%, #f8f9fa 100%);
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             padding: 2rem;
             box-shadow: var(--shadow-soft);
-            border: 2px solid transparent;
+            border: var(--border-subtle);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
             height: 100%;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 100%);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
             border-color: var(--naroc-orange);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
         }
 
         .feature-number {
@@ -182,9 +164,9 @@
         .benefits-section {
             background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 3rem 0;
             margin: 4rem 0;
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             position: relative;
             overflow: hidden;
         }
@@ -200,8 +182,8 @@
         }
 
         .benefits-title {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2rem;
+            font-weight: 700;
             text-align: center;
             margin-bottom: 3rem;
             color: white;
@@ -234,7 +216,7 @@
             background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
             border: none;
             padding: 1rem 2.5rem;
-            border-radius: 50px;
+            border-radius: var(--radius-md);
             font-weight: 700;
             font-size: 1.1rem;
             color: white;
@@ -249,18 +231,14 @@
 
         .btn-whatsapp:hover {
             background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-soft);
             color: white;
         }
 
         .btn-whatsapp i {
             font-size: 1.4rem;
             transition: var(--transition);
-        }
-
-        .btn-whatsapp:hover i {
-            transform: scale(1.2) rotate(5deg);
         }
 
         /* Responsive */
@@ -380,22 +358,22 @@
                     <h5>Instalaciones Eléctricas Residenciales</h5>
                     <p>Son las instalaciones que se realizan en viviendas unifamiliares o multifamiliares. Incluyen circuitos para iluminación, tomas de corriente, electrodomésticos, calefacción, etc.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="250">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="feature-number">02</div>
                     <h5>Instalaciones Eléctricas Comerciales</h5>
                     <p>Son las instalaciones en comercios, oficinas o edificios de uso público. Además de la iluminación y la distribución de energía, pueden incluir sistemas de aire acondicionado, seguridad, computadoras y sistemas de comunicación.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="feature-number">03</div>
                     <h5>Instalaciones Eléctricas Industriales</h5>
                     <p>Son las que se llevan a cabo en fábricas, plantas industriales o almacenes. Estas instalaciones son de mayor capacidad y requieren sistemas más robustos para alimentar maquinaria, equipos de gran potencia y sistemas de ventilación.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="350">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="feature-number">04</div>
                     <h5>Conexión al Suministro</h5>
                     <p>Se conecta el sistema a la fuente de energía principal, asegurando una distribución segura y eficiente. Incluye la instalación de medidores, tableros principales y sistemas de protección.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="feature-number">05</div>
                     <h5>Instalaciones Eléctricas Públicas</h5>
                     <p>Se refieren a las instalaciones utilizadas en calles, parques, alumbrado público y otros servicios urbanos. Garantizamos seguridad y eficiencia en espacios de uso comunitario.</p>
@@ -413,12 +391,12 @@
                         <h4>Máxima Seguridad</h4>
                         <p>Cumplimiento estricto de normativas de seguridad eléctrica para proteger personas y equipos.</p>
                     </div>
-                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-lightning-charge benefit-icon"></i>
                         <h4>Eficiencia Energética</h4>
                         <p>Diseños optimizados que reducen el consumo energético y maximizan el rendimiento del sistema.</p>
                     </div>
-                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-gem benefit-icon"></i>
                         <h4>Calidad Garantizada</h4>
                         <p>Utilizamos materiales de primera calidad y técnicas de instalación probadas para garantizar durabilidad.</p>
@@ -447,9 +425,10 @@
     <script src="/assets/js/components/footer.js"></script>
     <script>
         AOS.init({
-            duration: 800,
+            duration: 500,
             once: true,
-            offset: 100
+            offset: 100,
+            disable: 'mobile'
         });
     </script>
 </body>

@@ -23,9 +23,8 @@
         .service-hero {
             position: relative;
             background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
-            padding: 6rem 0 4rem;
+            padding: 5rem 0 3rem;
             margin-bottom: 3rem;
-            overflow: hidden;
         }
 
         .service-hero::before {
@@ -49,7 +48,6 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .service-hero h1 .highlight {
@@ -65,7 +63,7 @@
         /* Content Section */
         .content-section {
             background: var(--light-bg);
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             padding: 3rem;
             margin-bottom: 3rem;
             box-shadow: var(--shadow-soft);
@@ -76,7 +74,7 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             box-shadow: var(--shadow-soft);
             transition: var(--transition);
         }
@@ -104,36 +102,20 @@
 
         .feature-card {
             background: linear-gradient(135deg, var(--light-bg) 0%, #f8f9fa 100%);
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             padding: 2rem;
             box-shadow: var(--shadow-soft);
-            border: 2px solid transparent;
+            border: var(--border-subtle);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
             height: 100%;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 100%);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
             border-color: var(--naroc-orange);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
         }
 
         .feature-icon {
@@ -165,9 +147,9 @@
         .benefits-section {
             background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 3rem 0;
             margin: 4rem 0;
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             position: relative;
             overflow: hidden;
         }
@@ -183,8 +165,8 @@
         }
 
         .benefits-title {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2rem;
+            font-weight: 700;
             text-align: center;
             margin-bottom: 3rem;
             color: white;
@@ -215,7 +197,7 @@
         /* Types Section */
         .types-section {
             background: var(--light-bg);
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             padding: 3rem;
             margin-bottom: 3rem;
             box-shadow: var(--shadow-soft);
@@ -224,7 +206,7 @@
 
         .type-card {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             padding: 2rem;
             text-align: center;
             border: 2px solid transparent;
@@ -248,7 +230,7 @@
             background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
             border: none;
             padding: 1rem 2.5rem;
-            border-radius: 50px;
+            border-radius: var(--radius-md);
             font-weight: 700;
             font-size: 1.1rem;
             color: white;
@@ -263,18 +245,14 @@
 
         .btn-whatsapp:hover {
             background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-soft);
             color: white;
         }
 
         .btn-whatsapp i {
             font-size: 1.4rem;
             transition: var(--transition);
-        }
-
-        .btn-whatsapp:hover i {
-            transform: scale(1.2) rotate(5deg);
         }
 
         /* Responsive */
@@ -302,7 +280,7 @@
         }
 
         .service-carousel {
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow-soft);
         }
@@ -428,19 +406,19 @@
                     <p>Un conduit es un tubo o conducto que sirve para proteger cables eléctricos, evitando que sufran
                         daños por factores externos como contacto con agua, fuego o daños físicos.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="250">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-lightbulb feature-icon"></i>
                     <h5>Solución Efectiva</h5>
                     <p>Es una solución efectiva para proteger, organizar y asegurar las instalaciones eléctricas, siendo
                         una práctica estándar tanto en construcciones nuevas como en remodelaciones.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-pencil-square feature-icon"></i>
                     <h5>Diseño Planificado</h5>
                     <p>Se realiza siguiendo un diseño previamente planificado, donde se establecen las rutas de los
                         cables eléctricos para optimizar la distribución y facilitar futuras ampliaciones.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="350">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-file-earmark-check feature-icon"></i>
                     <h5>Cumplimiento Normativo</h5>
                     <p>Para su instalación se deben respetar normativas y estándares de seguridad eléctrica, como las
@@ -460,14 +438,14 @@
                         <p>Ideal para áreas con alto riesgo de daños mecánicos o exposición a elementos corrosivos.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="type-card">
                         <i class="bi bi-lightning type-icon"></i>
                         <h5>Conduit PVC</h5>
                         <p>Perfecto para instalaciones en interiores y áreas húmedas, resistente a la corrosión.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="type-card">
                         <i class="bi bi-gear type-icon"></i>
                         <h5>Conduit Flexible</h5>
@@ -488,13 +466,13 @@
                         <p>Protege los cables contra daños físicos, humedad, productos químicos y otros factores
                             ambientales.</p>
                     </div>
-                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-folder-symlink benefit-icon"></i>
                         <h4>Organización Óptima</h4>
                         <p>Mantiene los cables organizados y facilita el mantenimiento y futuras ampliaciones del
                             sistema.</p>
                     </div>
-                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-graph-up-arrow benefit-icon"></i>
                         <h4>Larga Durabilidad</h4>
                         <p>Extiende la vida útil de las instalaciones eléctricas y reduce costos de mantenimiento.</p>
@@ -525,9 +503,10 @@
     <script src="/assets/js/components/footer.js"></script>
     <script>
         AOS.init({
-            duration: 800,
+            duration: 500,
             once: true,
-            offset: 100
+            offset: 100,
+            disable: 'mobile'
         });
     </script>
 </body>

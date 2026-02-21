@@ -22,9 +22,8 @@
         .service-hero {
             position: relative;
             background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
-            padding: 6rem 0 4rem;
+            padding: 5rem 0 3rem;
             margin-bottom: 3rem;
-            overflow: hidden;
         }
 
         .service-hero::before {
@@ -48,7 +47,6 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .service-hero h1 .highlight {
@@ -64,7 +62,7 @@
         /* Content Section */
         .content-section {
             background: var(--light-bg);
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             padding: 3rem;
             margin-bottom: 3rem;
             box-shadow: var(--shadow-soft);
@@ -75,7 +73,7 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             box-shadow: var(--shadow-soft);
             transition: var(--transition);
         }
@@ -103,10 +101,10 @@
 
         .feature-card {
             background: linear-gradient(135deg, var(--light-bg) 0%, #f8f9fa 100%);
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             padding: 2rem;
             box-shadow: var(--shadow-soft);
-            border: 2px solid transparent;
+            border: var(--border-subtle);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -114,26 +112,10 @@
             text-align: center;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 100%);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
             border-color: var(--naroc-orange);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
         }
 
         .feature-icon {
@@ -165,9 +147,9 @@
         .benefits-section {
             background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 3rem 0;
             margin: 4rem 0;
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             position: relative;
             overflow: hidden;
         }
@@ -183,8 +165,8 @@
         }
 
         .benefits-title {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2rem;
+            font-weight: 700;
             text-align: center;
             margin-bottom: 3rem;
             color: white;
@@ -215,7 +197,7 @@
         /* Materials Section */
         .materials-section {
             background: var(--light-bg);
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             padding: 3rem;
             margin-bottom: 3rem;
             box-shadow: var(--shadow-soft);
@@ -224,7 +206,7 @@
 
         .material-card {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
+            border-radius: var(--radius-lg);
             padding: 2rem;
             text-align: center;
             border: 2px solid transparent;
@@ -248,7 +230,7 @@
             background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
             border: none;
             padding: 1rem 2.5rem;
-            border-radius: 50px;
+            border-radius: var(--radius-md);
             font-weight: 700;
             font-size: 1.1rem;
             color: white;
@@ -263,18 +245,14 @@
 
         .btn-whatsapp:hover {
             background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-soft);
             color: white;
         }
 
         .btn-whatsapp i {
             font-size: 1.4rem;
             transition: var(--transition);
-        }
-
-        .btn-whatsapp:hover i {
-            transform: scale(1.2) rotate(5deg);
         }
 
         /* Responsive */
@@ -387,27 +365,27 @@
                     <h5>Durabilidad Excepcional</h5>
                     <p>Materiales que mantienen su belleza y funcionalidad por décadas, resistiendo el desgaste diario y el paso del tiempo sin perder su esplendor original.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="250">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-thermometer-sun feature-icon"></i>
                     <h5>Resistencia al Calor y Manchas</h5>
                     <p>Superficies que soportan altas temperaturas y son resistentes a manchas, ideales para cocinas, baños y áreas de alto tráfico.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-palette feature-icon"></i>
                     <h5>Estética Inigualable</h5>
                     <p>Texturas y colores naturales que añaden valor estético inmediato a cualquier espacio, creando ambientes únicos y sofisticados.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="350">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-gem feature-icon"></i>
                     <h5>Sofisticación Natural</h5>
                     <p>Acabados que transmiten lujo y elegancia, elevando el nivel de cualquier proyecto arquitectónico o de diseño de interiores.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-droplet feature-icon"></i>
                     <h5>Baja Porosidad</h5>
                     <p>Materiales con tratamiento especial que reducen la absorción de líquidos, facilitando la limpieza y mantenimiento.</p>
                 </div>
-                <div class="feature-card" data-aos="zoom-in" data-aos-delay="450">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-brush feature-icon"></i>
                     <h5>Variedad de Colores y Patrones</h5>
                     <p>Amplia gama de tonalidades y diseños naturales para adaptarse a cualquier estilo decorativo y preferencia personal.</p>
@@ -426,14 +404,14 @@
                         <p>Ideal para encimeras y áreas de alto tráfico por su extrema dureza y resistencia a rayaduras.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="material-card">
                         <i class="bi bi-stars material-icon"></i>
                         <h5>Mármol</h5>
                         <p>Elegancia clásica con vetas únicas, perfecto para crear ambientes lujosos y distinguidos.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="material-card">
                         <i class="bi bi-shield-check material-icon"></i>
                         <h5>Cuarzo</h5>
@@ -453,12 +431,12 @@
                         <h4>Valor Agregado</h4>
                         <p>Aumenta significativamente el valor de la propiedad con acabados de lujo que perduran en el tiempo.</p>
                     </div>
-                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-recycle benefit-icon"></i>
                         <h4>Bajo Mantenimiento</h4>
                         <p>Materiales naturales que requieren mínimo cuidado manteniendo su belleza original por años.</p>
                     </div>
-                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-award benefit-icon"></i>
                         <h4>Calidad Garantizada</h4>
                         <p>Trabajamos con materiales de primera calidad y técnicas de instalación probadas internacionalmente.</p>
@@ -487,9 +465,10 @@
     <script src="/assets/js/components/footer.js"></script>
     <script>
         AOS.init({
-            duration: 800,
+            duration: 500,
             once: true,
-            offset: 100
+            offset: 100,
+            disable: 'mobile'
         });
     </script>
 </body>
