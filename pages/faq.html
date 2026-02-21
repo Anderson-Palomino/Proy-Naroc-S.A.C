@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Preguntas Frecuentes - NAROC SAC</title>
+    <meta name="description" content="Preguntas frecuentes sobre los servicios de NAROC SAC.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="/assets/img/logo/LogoNavBar.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/global.css">
+
+    <style>
+        body {
+            padding-top: 0;
+        }
+
+        /* Banner Section */
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 8s ease;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .overlay-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(248, 249, 250, 0.7) 100%);
+            backdrop-filter: blur(3px);
+        }
+
+        .banner-text {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            color: var(--naroc-dark);
+        }
+
+        .banner-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+            animation: fadeInUp 1s ease;
+        }
+
+        .banner-text .quienes {
+            color: var(--naroc-blue);
+        }
+
+        .banner-text .somos {
+            color: var(--naroc-orange);
+        }
+
+        .banner-text h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--naroc-dark);
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        /* FAQ Section */
+        .section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        /* Accordion Styles */
+        .accordion-item {
+            margin-bottom: 1.5rem;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .accordion-item:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .accordion-button {
+            background: white;
+            color: var(--naroc-blue);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1.5rem 2rem;
+            border: none;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
+            color: white;
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border: none;
+        }
+
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230047AB'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            transition: var(--transition);
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        .accordion-button span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--naroc-orange);
+            border-radius: 50%;
+            margin-right: 15px;
+            transition: var(--transition);
+        }
+
+        .accordion-button:not(.collapsed) span {
+            background: white;
+        }
+
+        .accordion-body {
+            padding: 2rem;
+            background: white;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--naroc-dark);
+            border-top: 1px solid rgba(0, 71, 171, 0.1);
+        }
+
+        .accordion-body p {
+            margin-bottom: 0;
+        }
+
+        /* WhatsApp Button */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+            color: white;
+        }
+
+        /* Animations */
+        .accordion-item {
+            opacity: 0;
+            animation: fadeInScale 0.6s ease forwards;
+        }
+
+        /* Animation delays for accordion items */
+        .accordion-item:nth-child(1) { animation-delay: 0.1s; }
+        .accordion-item:nth-child(2) { animation-delay: 0.2s; }
+        .accordion-item:nth-child(3) { animation-delay: 0.3s; }
+        .accordion-item:nth-child(4) { animation-delay: 0.4s; }
+        .accordion-item:nth-child(5) { animation-delay: 0.5s; }
+        .accordion-item:nth-child(6) { animation-delay: 0.6s; }
+        .accordion-item:nth-child(7) { animation-delay: 0.7s; }
+        .accordion-item:nth-child(8) { animation-delay: 0.8s; }
+        .accordion-item:nth-child(9) { animation-delay: 0.9s; }
+        .accordion-item:nth-child(10) { animation-delay: 1.0s; }
+
+        /* Responsive */
+        @media (max-width: 991.98px) {
+            .banner {
+                height: 350px;
+            }
+
+            .banner-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .banner-text h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .banner {
+                height: 300px;
+            }
+
+            .banner-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .banner-text h2 {
+                font-size: 1.1rem;
+            }
+
+            .accordion-button {
+                padding: 1.2rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .accordion-body {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <!-- Banner Section -->
+        <div class="banner">
+            <div class="overlay">
+                <div class="overlay-bg"></div>
+                <div class="banner-text">
+                    <h1><span class="quienes">Preguntas</span> <span class="somos">Frecuentes</span></h1>
+                    <h2 class="subtext">Resolvemos tus dudas sobre sus preguntas más generales</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section" id="faq">
+            <div class="container">
+                <h2 class="section-heading">Preguntas Frecuentes</h2>
+                <div class="row">
+                    <!-- Primera columna -->
+                    <div class="col-md-6">
+                        <div class="accordion accordion-flush" id="accordionFlushLeft">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
+                                        <span>&nbsp;</span>¿Qué tipos de servicios generales ofrecen?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushLeft">
+                                    <div class="accordion-body">
+                                        <p>Ofrecemos una amplia gama de servicios: Instalaciones eléctricas, Sistema de alarma contraincendios, Aire acondicionado, Instalaciones de cámara de seguridad, Entubado en Conduit, Instalaciones de drywall, Licencias de funcionamiento e ITSE, Cableado estructurado, Pozo a tierra, Mantenimientos generales, Ascensores, Acero y estructuras fierro, Acabados en granito, mármol, cuarzo, entre otros, Enchapados, Albañil, Gasfitería y más.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo">
+                                        <span>&nbsp;</span>¿Cómo puedo solicitar un servicio?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushLeft">
+                                    <div class="accordion-body">
+                                        <p>Puedes solicitarnos un servicio a través de nuestro número telefónico, correo electrónico o mediante nuestra página web, donde también puedes completar un formulario de solicitud de servicio.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                        aria-expanded="false" aria-controls="flush-collapseThree">
+                                        <span>&nbsp;</span>¿Qué áreas cubren sus servicios?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushLeft">
+                                    <div class="accordion-body">
+                                        <p>Cubrimos toda Lima y Provincia. Si tienes dudas sobre si cubrimos tu área, por favor contáctanos y te confirmaremos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                        aria-controls="flush-collapseFour">
+                                        <span>&nbsp;</span>¿Ofrecen servicios de emergencia?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushLeft">
+                                    <div class="accordion-body">
+                                        <p>Sí, ofrecemos servicios de emergencia para situaciones urgentes, como problemas de plomería, fallas eléctricas o reparaciones críticas. Nuestro equipo está disponible 24/7 en estos casos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                        aria-controls="flush-collapseFive">
+                                        <span>&nbsp;</span>¿Cómo se calcula el costo de los servicios?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushLeft">
+                                    <div class="accordion-body">
+                                        <p>El costo depende del tipo de servicio solicitado, la complejidad del trabajo y el tiempo estimado para realizarlo. En algunos casos, ofrecemos cotizaciones gratuitas antes de comenzar cualquier trabajo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                        aria-controls="flush-collapseSix">
+                                        <span>&nbsp;</span>¿Ofrecen garantías por los servicios prestados?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushLeft">
+                                    <div class="accordion-body">
+                                        <p>Sí, todos nuestros servicios están respaldados por una garantía de calidad. Esto varía según el tipo de servicio, pero garantizamos que el trabajo se realice correctamente.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven"
+                                        aria-expanded="false" aria-controls="flush-collapseSeven">
+                                        <span>&nbsp;</span>¿Cómo puedo saber si necesito un servicio específico?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushLeft">
+                                    <div class="accordion-body">
+                                        <p>Si no estás seguro de qué servicio necesitas, podemos enviarte a un profesional que evaluará la situación y te recomendará el mejor enfoque. No dudes en consultarnos sobre cualquier duda.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseEight"
+                                        aria-expanded="false" aria-controls="flush-collapseEight">
+                                        <span>&nbsp;</span>¿Qué debo hacer antes de que lleguen a mi casa para realizar el servicio?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseEight" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushLeft">
+                                    <div class="accordion-body">
+                                        <p>Te recomendamos que prepares el área donde se realizará el trabajo (por ejemplo, despejando el lugar de muebles o materiales). Si el servicio requiere acceso a ciertas instalaciones, asegúrate de tenerlas disponibles.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false"
+                                        aria-controls="flush-collapseNine">
+                                        <span>&nbsp;</span>¿Puedo pedir un presupuesto previo?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseNine" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushLeft">
+                                    <div class="accordion-body">
+                                        <p>Sí, ofrecemos presupuestos detallados antes de comenzar cualquier trabajo. Esto te permitirá conocer el costo aproximado y decidir si deseas proceder.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false"
+                                        aria-controls="flush-collapseTen">
+                                        <span>&nbsp;</span>¿Qué sucede si el trabajo no queda bien hecho?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTen" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushLeft">
+                                    <div class="accordion-body">
+                                        <p>Si no quedas satisfecho con el servicio recibido, por favor notifícanos de inmediato. Ofrecemos una revisión y, si es necesario, corregimos cualquier problema sin costo adicional, dentro de los términos de la garantía.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Segunda columna -->
+                    <div class="col-md-6">
+                        <div class="accordion accordion-flush" id="accordionFlushRight">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven"
+                                        aria-expanded="false" aria-controls="flush-collapseEleven">
+                                        <span>&nbsp;</span>¿Cuál es el tiempo de espera para realizar una reparación o instalación?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseEleven" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushRight">
+                                    <div class="accordion-body">
+                                        <p>El tiempo de espera depende de la disponibilidad del personal y la urgencia del servicio. En algunos casos, podemos programar una cita el mismo día o dentro de las siguientes 24 horas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve"
+                                        aria-expanded="false" aria-controls="flush-collapseTwelve">
+                                        <span>&nbsp;</span>¿Necesito estar presente durante la realización del servicio?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwelve" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushRight">
+                                    <div class="accordion-body">
+                                        <p>No siempre es necesario, pero en algunos casos puede ser útil que estés presente para aprobar el trabajo o proporcionar detalles adicionales. Sin embargo, puedes dejar acceso a las áreas necesarias si no puedes estar presente.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseThirteen"
+                                        aria-expanded="false" aria-controls="flush-collapseThirteen">
+                                        <span>&nbsp;</span>¿Los técnicos están capacitados y asegurados?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThirteen" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushRight">
+                                    <div class="accordion-body">
+                                        <p>Sí, todos nuestros técnicos están altamente capacitados en sus respectivas áreas y cuentan con la formación necesaria para realizar un trabajo seguro y eficiente. Además, están asegurados para tu tranquilidad.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseFourteen"
+                                        aria-expanded="false" aria-controls="flush-collapseFourteen">
+                                        <span>&nbsp;</span>¿Qué pasa si surgen problemas tras finalizar el trabajo?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFourteen" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushRight">
+                                    <div class="accordion-body">
+                                        <p>Si experimentas problemas después de que hemos completado el trabajo, por favor contáctanos lo antes posible. Revisaremos el problema y tomaremos las medidas necesarias para corregirlo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseFifteen"
+                                        aria-expanded="false" aria-controls="flush-collapseFifteen">
+                                        <span>&nbsp;</span>¿Puedo obtener un servicio recurrente de mantenimiento?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFifteen" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushRight">
+                                    <div class="accordion-body">
+                                        <p>Sí, ofrecemos planes de mantenimiento programado para diversos servicios, como aire acondicionado, fontanería o sistemas eléctricos. Esto ayuda a evitar problemas futuros y a mantener tus instalaciones en buen estado.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseSixteen"
+                                        aria-expanded="false" aria-controls="flush-collapseSixteen">
+                                        <span>&nbsp;</span>¿Cómo pago por los servicios?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseSixteen" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushRight">
+                                    <div class="accordion-body">
+                                        <p>Aceptamos diversos métodos de pago, transferencia bancaria, pago en efectivo y otros métodos electrónicos, según lo acordado.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseSeventeen"
+                                        aria-expanded="false" aria-controls="flush-collapseSeventeen">
+                                        <span>&nbsp;</span>¿Puedo solicitar la instalación de productos específicos?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseSeventeen" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushRight">
+                                    <div class="accordion-body">
+                                        <p>Sí, podemos instalar productos que tú proporcionas. Si necesitas asesoramiento sobre qué productos son más adecuados para tu espacio, podemos ayudarte a elegir opciones.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseEighteen"
+                                        aria-expanded="false" aria-controls="flush-collapseEighteen">
+                                        <span>&nbsp;</span>¿Qué pasa si mi equipo o instalación necesita repuestos?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseEighteen" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushRight">
+                                    <div class="accordion-body">
+                                        <p>Si es necesario reemplazar alguna parte, podemos proporcionarte el repuesto adecuado o, si lo prefieres, ayudarte a adquirirlo. Te informaremos sobre los costos y tiempos de entrega.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseNineteen"
+                                        aria-expanded="false" aria-controls="flush-collapseNineteen">
+                                        <span>&nbsp;</span>¿Cuánto tiempo tardan en completar el servicio?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseNineteen" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushRight">
+                                    <div class="accordion-body">
+                                        <p>El tiempo de trabajo depende del tipo de servicio. Algunos trabajos pueden completarse en un par de horas, mientras que otros pueden llevar más tiempo, especialmente en instalaciones más complejas o reparaciones grandes. Te proporcionaremos un estimado cuando realices la solicitud.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseTwenty"
+                                        aria-expanded="false" aria-controls="flush-collapseTwenty">
+                                        <span>&nbsp;</span>¿Realizan trabajos en propiedades comerciales o industriales?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwenty" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushRight">
+                                    <div class="accordion-body">
+                                        <p>Sí, también realizamos servicios generales en propiedades comerciales e industriales. Tenemos experiencia en instalaciones de mayor escala y en trabajos que requieren cumplir con normativas específicas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="https://wa.me/51966622289" target="_blank">
+                        <button class="btn btn-primary btn-lg btn-whatsapp">
+                            Contáctanos <i class="bi bi-whatsapp"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-gaaa"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="/assets/js/components/navbar.js"></script>
+    <script src="/assets/js/components/footer.js"></script>
+</body>
+
+</html>

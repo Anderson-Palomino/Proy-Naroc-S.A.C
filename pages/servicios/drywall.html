@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Instalación de Drywall - NAROC SAC</title>
+    <link rel="icon" href="/assets/img/logo/LogoNavBar.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <meta name="description" content="Instalación profesional de drywall en Lima. NAROC SAC ofrece soluciones modernas de construcción en seco con aislamiento acústico y térmico.">
+    <style>
+        body {
+            padding-top: 100px;
+        }
+
+        /* Hero Section */
+        .service-hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
+            padding: 6rem 0 4rem;
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
+        }
+
+        .service-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .service-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-hero h1 .highlight {
+            color: var(--naroc-orange);
+        }
+
+        .service-hero p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        /* Content Section */
+        .content-section {
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(0, 71, 171, 0.1);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .service-image:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--light-text);
+            text-align: justify;
+            margin-bottom: 2rem;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid transparent;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 100%);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--naroc-orange);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--naroc-blue);
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            color: var(--naroc-orange);
+            transform: scale(1.1);
+        }
+
+        .feature-card h5 {
+            font-weight: 700;
+            color: var(--naroc-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
+            color: white;
+            padding: 4rem 0;
+            margin: 4rem 0;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
+        }
+
+        .benefits-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--naroc-orange);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .benefit-item p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        /* Applications Section */
+        .applications-section {
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(0, 71, 171, 0.1);
+        }
+
+        .application-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .application-card:hover {
+            border-color: var(--naroc-blue);
+            transform: translateY(-3px);
+        }
+
+        .application-icon {
+            font-size: 2.5rem;
+            color: var(--naroc-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* WhatsApp Button */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-whatsapp:hover {
+            background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            color: white;
+        }
+
+        .btn-whatsapp i {
+            font-size: 1.4rem;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+        .service-carousel {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 71, 171, 0.8);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0 1rem;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background: var(--naroc-orange);
+        }
+
+        /* Responsive */
+        @media (max-width: 991.98px) {
+            body {
+                padding-top: 90px;
+            }
+            
+            .service-hero {
+                padding: 5rem 0 3rem;
+            }
+
+            .service-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-section, .applications-section {
+                padding: 2rem;
+            }
+
+            .service-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .service-hero {
+                padding: 4rem 0 2rem;
+            }
+
+            .service-hero h1 {
+                font-size: 2rem;
+            }
+
+            .service-hero p {
+                font-size: 1rem;
+            }
+
+            .content-section, .applications-section {
+                padding: 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="service-hero" data-aos="fade-down">
+        <div class="container">
+            <div class="service-hero-content">
+                <h1>Instalación de <span class="highlight">Drywall</span></h1>
+                <p>Soluciones modernas y eficientes para construcción y remodelación</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content-section" data-aos="fade-up">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div id="conduitCarousel" class="carousel slide service-carousel" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="4000">
+                                <img src="/assets/img/servicios/ServicioDrywall.png" class="d-block w-100"
+                                    alt="Instalación de conduit">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <img src="/assets/img/servicios/ServicioDrywall2.jpg" class="d-block w-100"
+                                    alt="Trabajo de entubado eléctrico" loading="lazy">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#conduitCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#conduitCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-description">
+                        <p>El drywall es una técnica de construcción moderna que se utiliza para crear superficies de paredes y techos de manera rápida y eficiente, sin necesidad de aplicar materiales pesados como el ladrillo o el cemento.</p>
+                        <p>Este sistema es ampliamente utilizado tanto en construcciones nuevas como en remodelaciones debido a su facilidad de instalación, bajo costo y excelentes propiedades de aislamiento acústico y térmico.</p>
+                        <p>Ofrecemos soluciones personalizadas que se adaptan a cualquier tipo de espacio, garantizando resultados de alta calidad y durabilidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="content-section" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="text-center mb-5" style="color: var(--naroc-blue); font-weight: 800;">Ventajas del Drywall</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="bi bi-speedometer2 feature-icon"></i>
+                    <h5>Alta Eficiencia</h5>
+                    <p>Gran eficiencia en el rendimiento con tiempos de instalación reducidos y mínimo desperdicio de materiales.</p>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="250">
+                    <i class="bi bi-calendar-check feature-icon"></i>
+                    <h5>Larga Vida Útil</h5>
+                    <p>Estructuras duraderas que mantienen su integridad y apariencia a lo largo del tiempo con mínimo mantenimiento.</p>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="bi bi-rulers feature-icon"></i>
+                    <h5>Precisión Total</h5>
+                    <p>Estructuras perfectamente niveladas y alineadas, garantizando un acabado profesional y estético.</p>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="350">
+                    <i class="bi bi-gear feature-icon"></i>
+                    <h5>Máxima Adaptabilidad</h5>
+                    <p>Estructuras con gran capacidad de adaptación y moldeabilidad para cualquier diseño arquitectónico.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Applications Section -->
+        <div class="applications-section" data-aos="fade-up">
+            <h2 class="text-center mb-5" style="color: var(--naroc-blue); font-weight: 800;">Aplicaciones</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="application-card">
+                        <i class="bi bi-house application-icon"></i>
+                        <h5>Construcción Residencial</h5>
+                        <p>Divisiones internas, cielos rasos y remodelaciones en viviendas y departamentos.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="application-card">
+                        <i class="bi bi-building application-icon"></i>
+                        <h5>Proyectos Comerciales</h5>
+                        <p>Oficinas, locales comerciales, centros educativos y espacios corporativos.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="application-card">
+                        <i class="bi bi-gear application-icon"></i>
+                        <h5>Soluciones Industriales</h5>
+                        <p>Divisiones en plantas industriales, áreas de oficina y espacios técnicos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section" data-aos="fade-up">
+            <div class="container">
+                <h2 class="benefits-title">Beneficios Adicionales</h2>
+                <div class="row">
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="200">
+                        <i class="bi bi-volume-mute benefit-icon"></i>
+                        <h4>Aislamiento Acústico</h4>
+                        <p>Excelente capacidad de absorción sonora, ideal para espacios que requieren privacidad acústica.</p>
+                    </div>
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="300">
+                        <i class="bi bi-thermometer benefit-icon"></i>
+                        <h4>Aislamiento Térmico</h4>
+                        <p>Mejora la eficiencia energética al mantener temperaturas estables en interiores.</p>
+                    </div>
+                    <div class="col-md-4 benefit-item" data-aos="fade-up" data-aos-delay="400">
+                        <i class="bi bi-lightning-charge benefit-icon"></i>
+                        <h4>Instalación Rápida</h4>
+                        <p>Tiempos de ejecución significativamente menores comparados con sistemas tradicionales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="text-center my-5" data-aos="fade-up">
+            <h3 class="mb-4" style="color: var(--naroc-blue); font-weight: 700;">¿Listo para transformar tus espacios?</h3>
+            <p class="mb-4 fs-5" style="color: var(--light-text);">Contáctanos para una asesoría gratuita y cotización personalizada</p>
+            <a href="https://wa.me/51966622289" target="_blank" class="btn btn-whatsapp">
+                Solicitar Cotización <i class="bi bi-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <div id="footer-gaaa"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="/assets/js/components/navbar.js"></script>
+    <script src="/assets/js/components/footer.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+
+</html>
