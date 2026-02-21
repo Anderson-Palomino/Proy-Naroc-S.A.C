@@ -11,340 +11,51 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="stylesheet" href="/assets/css/global.css">
     <meta name="description" content="Mantenimiento preventivo y correctivo de ascensores en Lima. NAROC SAC ofrece servicio profesional con soporte 24/7 y cumplimiento normativo.">
+    <meta name="theme-color" content="#0047AB">
+    <link rel="apple-touch-icon" href="/assets/img/logo/LogoNavBar.png">
+    <link rel="canonical" href="https://narocsac.com/pages/servicios/mantenimiento-ascensores.html">
+    <meta property="og:title" content="Mantenimiento de Ascensores - NAROC SAC">
+    <meta property="og:description" content="Mantenimiento preventivo y correctivo de ascensores en Lima. NAROC SAC ofrece servicio profesional con soporte 24/7 y cumplimiento normativo.">
+    <meta property="og:image" content="/assets/img/logo/LogoInicio.png">
+    <meta property="og:url" content="https://narocsac.com/pages/servicios/mantenimiento-ascensores.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="/assets/css/pages/services.css">
     <style>
         body {
             padding-top: 100px;
         }
 
-        /* Hero Section */
-        .service-hero {
-            position: relative;
-            background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
-            padding: 5rem 0 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .service-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
-        }
-
-        .service-hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: white;
-        }
-
-        .service-hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .service-hero h1 .highlight {
-            color: var(--naroc-orange);
-        }
-
-        .service-hero p {
-            font-size: 1.2rem;
-            font-weight: 500;
-            opacity: 0.95;
-        }
-
-        /* Content Section */
-        .content-section {
-            background: var(--light-bg);
-            border-radius: var(--radius-lg);
-            padding: 3rem;
-            margin-bottom: 3rem;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(0, 71, 171, 0.1);
-        }
-
-        .service-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-        }
-
-        .service-image:hover {
-            transform: scale(1.02);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .service-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--light-text);
-            text-align: justify;
-            margin-bottom: 2rem;
-        }
-
-        /* Features Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, var(--light-bg) 0%, #f8f9fa 100%);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            box-shadow: var(--shadow-soft);
-            border: var(--border-subtle);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--naroc-orange);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--naroc-blue);
-            margin-bottom: 1rem;
-            transition: var(--transition);
-        }
-
-        .feature-card:hover .feature-icon {
-            color: var(--naroc-orange);
-            transform: scale(1.1);
-        }
-
-        .feature-card h5 {
-            font-weight: 700;
-            color: var(--naroc-blue);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .feature-card p {
-            color: var(--light-text);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .feature-list li {
-            padding: 0.5rem 0;
-            color: var(--light-text);
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .feature-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--naroc-orange);
-            font-weight: bold;
-        }
-
-        /* Benefits Section */
-        .benefits-section {
-            background: linear-gradient(135deg, var(--naroc-dark) 0%, var(--naroc-blue) 100%);
-            color: white;
-            padding: 3rem 0;
-            margin: 4rem 0;
-            border-radius: var(--radius-lg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .benefits-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--naroc-blue) 0%, var(--naroc-orange) 50%, var(--naroc-red) 100%);
-        }
-
-        .benefits-title {
-            font-size: 2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: white;
-        }
-
-        .benefit-item {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .benefit-icon {
-            font-size: 3rem;
-            color: var(--naroc-orange);
-            margin-bottom: 1rem;
-        }
-
-        .benefit-item h4 {
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .benefit-item p {
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
-        }
-
-        /* Services Section */
-        .services-section {
-            background: var(--light-bg);
-            border-radius: var(--radius-lg);
-            padding: 3rem;
-            margin-bottom: 3rem;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(0, 71, 171, 0.1);
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: var(--transition);
-            height: 100%;
-        }
-
-        .service-card:hover {
-            border-color: var(--naroc-blue);
-            transform: translateY(-3px);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--naroc-blue);
-            margin-bottom: 1rem;
-        }
-
-        /* WhatsApp Button */
-        .btn-whatsapp {
-            background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
-            border: none;
-            padding: 1rem 2.5rem;
-            border-radius: var(--radius-md);
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: white;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-whatsapp:hover {
-            background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-soft);
-            color: white;
-        }
-
-        .btn-whatsapp i {
-            font-size: 1.4rem;
-            transition: var(--transition);
-        }
-
-        /* Responsive */
         @media (max-width: 991.98px) {
             body {
                 padding-top: 90px;
             }
-            
-            .service-hero {
-                padding: 5rem 0 3rem;
-            }
-
-            .service-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .content-section, .services-section {
-                padding: 2rem;
-            }
-
-            .service-image {
-                height: 300px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            .service-hero {
-                padding: 4rem 0 2rem;
-            }
-
-            .service-hero h1 {
-                font-size: 2rem;
-            }
-
-            .service-hero p {
-                font-size: 1rem;
-            }
-
-            .content-section, .services-section {
-                padding: 1.5rem;
-            }
-
-            .benefits-title {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 375px) {
-            .service-hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .service-hero p {
-                font-size: 0.9rem;
-            }
-
-            .feature-card {
-                padding: 1.2rem;
-            }
         }
     </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Mantenimiento de Ascensores",
+        "provider": {
+            "@type": "Organization",
+            "name": "NAROC SAC",
+            "url": "https://narocsac.com"
+        },
+        "areaServed": "Lima, Perú",
+        "url": "https://narocsac.com/pages/servicios/mantenimiento-ascensores.html"
+    }
+    </script>
 </head>
 
 <body>
     <div id="navbar-placeholder"></div>
 
     <!-- Hero Section -->
-    <section class="service-hero" data-aos="fade-down">
+    <section class="service-hero" id="main-content" data-aos="fade-down">
         <div class="container">
             <div class="service-hero-content">
                 <h1>Mantenimiento de <span class="highlight">Ascensores</span></h1>
@@ -358,8 +69,8 @@
         <div class="content-section" data-aos="fade-up">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="/assets/img/servicios/Servicio-Ascensor.png" 
-                         alt="Mantenimiento profesional de ascensores" 
+                    <img src="/assets/img/servicios/Servicio-Ascensor.png"
+                         alt="Mantenimiento profesional de ascensores"
                          class="service-image">
                 </div>
                 <div class="col-lg-6">
@@ -473,7 +184,7 @@
         <div class="text-center my-5" data-aos="fade-up">
             <h3 class="mb-4" style="color: var(--naroc-blue); font-weight: 700;">¿Necesitas mantener tus ascensores en óptimas condiciones?</h3>
             <p class="mb-4 fs-5" style="color: var(--light-text);">Contáctanos para un programa de mantenimiento personalizado</p>
-            <a href="https://wa.me/51966622289" target="_blank" class="btn btn-whatsapp">
+            <a href="https://wa.me/51966622289" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
                 Solicitar Programa <i class="bi bi-whatsapp"></i>
             </a>
         </div>
