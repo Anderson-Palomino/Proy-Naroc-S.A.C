@@ -25,9 +25,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/global.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/components/banner.css">
-
     <style>
+        /* Banner Section */
+        .banner {
+            position: relative;
+            width: 100%;
+            min-height: 300px;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .banner-text {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .banner-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .banner-text .quienes {
+            color: white;
+        }
+
+        .banner-text .somos {
+            color: var(--naroc-orange);
+        }
+
+        .banner-text h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
         /* FAQ Section */
         .section {
             padding: 4rem 0;
@@ -130,7 +177,33 @@
         }
 
         /* Responsive */
+        @media (max-width: 991.98px) {
+            .banner {
+                min-height: 260px;
+            }
+
+            .banner-text h1 {
+                font-size: 2.4rem;
+            }
+
+            .banner-text h2 {
+                font-size: 1.1rem;
+            }
+        }
+
         @media (max-width: 767.98px) {
+            .banner {
+                min-height: 220px;
+            }
+
+            .banner-text h1 {
+                font-size: 2rem;
+            }
+
+            .banner-text h2 {
+                font-size: 1rem;
+            }
+
             .accordion-button {
                 padding: 1rem 1.2rem;
                 font-size: 0.95rem;
@@ -142,6 +215,14 @@
         }
 
         @media (max-width: 375px) {
+            .banner-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .banner-text h2 {
+                font-size: 0.9rem;
+            }
+
             .accordion-button {
                 font-size: 0.9rem;
                 padding: 0.9rem 1rem;

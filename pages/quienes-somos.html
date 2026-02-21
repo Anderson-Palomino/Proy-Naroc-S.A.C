@@ -25,9 +25,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/global.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/components/banner.css">
-
     <style>
+        /* Banner Section */
+        .banner {
+            position: relative;
+            background: linear-gradient(135deg, var(--naroc-blue) 0%, var(--naroc-light-blue) 100%);
+            padding: 6rem 0 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .banner-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .banner-text span {
+            font-size: 3rem;
+            font-weight: 800;
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+
+        .text-black {
+            color: white;
+        }
+
+        .text-orange {
+            color: var(--naroc-orange);
+        }
+
+        .banner-subtext {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            letter-spacing: 1px;
+        }
+
         /* Main Container */
         main.container {
             max-width: 1200px;
@@ -213,6 +248,14 @@
 
         /* Responsive */
         @media (max-width: 991.98px) {
+            .banner-text span {
+                font-size: 2.2rem;
+            }
+
+            .banner-subtext {
+                font-size: 1.05rem;
+            }
+
             .about-content,
             .mision,
             .vision {
@@ -244,6 +287,20 @@
         }
 
         @media (max-width: 767.98px) {
+            .banner {
+                padding: 5rem 0 3rem;
+            }
+
+            .banner-text span {
+                font-size: 1.8rem;
+                display: block;
+                margin: 0.3rem 0;
+            }
+
+            .banner-subtext {
+                font-size: 1rem;
+            }
+
             main.container {
                 padding: 0 1rem 3rem;
             }
@@ -266,6 +323,10 @@
         }
 
         @media (max-width: 375px) {
+            .banner-text span {
+                font-size: 1.5rem;
+            }
+
             .text-overlay h1 {
                 font-size: 1.4rem;
             }
